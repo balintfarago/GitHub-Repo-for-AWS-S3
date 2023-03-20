@@ -67,7 +67,7 @@
                 console.log(name + ', ' + email + ', ' + message);        
                 $.ajax({
                 type: "POST",                     
-                url: 'https://q0lqdi4igl.execute-api.eu-north-1.amazonaws.com/v1', contentType: 'application/json',      
+                url: 'https://q0lqdi4igl.execute-api.eu-north-1.amazonaws.com/v1', contentType: 'application/json',       //https://q0lqdi4igl.execute-api.eu-north-1.amazonaws.com/v1/newFormProcessor
                 data: JSON.stringify({                         
                 'name': name,                         
                 'email': email,                         
@@ -77,10 +77,10 @@
                     document.getElementById('error-msg').innerHTML = "<div class='alert alert-success'>*Message sent*</div>";                    
                 },
                 error: function(){
+                    alert(res);
+                    alert(res.message);
                     document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Something went wrong... We are working on it!*</div>";
                 }});
-
-
 
                 return false;
             }
