@@ -22,21 +22,50 @@
         <link href="css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
         <link href="css/colors/default.css" rel="stylesheet" id="color-opt">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
     </head>
 
     <body>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>         
-        <script type="text/javascript">         
-        $(document).ready(function() {
-            $("#submit").click(function(e) {                 
-                e.preventDefault();                          
+    <script type="text/javascript">
+        function validateForm() {
+            var name = document.forms["myForm"]["name"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var subject = document.forms["myForm"]["subject"].value;
+            var message = document.forms["myForm"]["message"].value;
+            document.getElementById("error-msg").style.opacity = 0;
+            document.getElementById('error-msg').innerHTML = "";
+            if (name == "" || name == null) {
+              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Name*</div>";
+              fadeIn();
+              return false;
+            }
+            else if (email == "" || email == null) {
+              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Email*</div>";
+              fadeIn();
+              return false;
+            }
+            /*else if (subject == "" || subject == null) {
+              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Subject*</div>";
+              fadeIn();
+              return false;
+            }*/
+           else if (message == "" || message == null) {
+              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Message*</div>";
+              fadeIn();
+              return false;
+            }
+            else {
+                document.getElementById('error-msg').innerHTML = "<div class='alert alert-success'>*Message sent*</div>";
+                fadeIn();
+
                 var name = $("#name").val(),
                 email = $("#email").val(),
                 message = $("#message").val();
                 console.log('TEST');
                 console.log(name + ', ' + email + ', ' + message);        
-                 $.ajax({                     
+                $.ajax({
                 type: "POST",                     
                 url: 'https://q0lqdi4igl.execute-api.eu-north-1.amazonaws.com/v1', contentType: 'application/json',      
                 data: JSON.stringify({                         
@@ -44,13 +73,41 @@
                 'email': email,                         
                 'message': message                     
                 }),                     
-                success: function(res){                         
-                $('#form-response').html('<div class="alert alert-info" role="alert">Welcome to the queue! Your path will begin shortly...</div>');
-            },  error: function(){
-                    $('#form-response').html('<div class="alert alert-info" role="alert">Something went wrong... We are working on it!</div>');
+                success: function(res){     
+                    document.getElementById('error-msg').innerHTML = "<div class='alert alert-success'>*Message sent*</div>";                    
+                },
+                error: function(){
+                    document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Something went wrong... We are working on it!*</div>";
                 }});
-            })
-        });      
+
+
+
+                return false;
+            }
+           
+            return false;
+
+          }
+          function fadeIn() {
+            var fade = document.getElementById("error-msg");
+            var opacity = 0;
+            var intervalID = setInterval(function () {
+              if (opacity < 1) {
+                opacity = opacity + 0.5
+                fade.style.opacity = opacity;
+              } else {
+                clearInterval(intervalID);
+              }
+            }, 200);
+          }
+        </script>
+     
+       
+      
+              
+                    
+                
+ 
         </script>
 
         <!-- Loaderr -->
@@ -779,8 +836,8 @@
         <!-- MK Lightbox -->
         <script src="js/mklb.js"></script>
         <script src="js/filter.init.js"></script>
-        <!-- Contact -->
-        <script src="js/contact.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
         <!-- Counter -->
         <script src="js/counter.init.js"></script>
         <!-- Typed -->
