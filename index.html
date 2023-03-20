@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Balint Farago's personal websites</title>
+        <title>Balint Farago's personal website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="I created this website to showcase my Amazon Web Services knowledge" />
         <meta content="Shreethemes" name="author" />
@@ -24,6 +24,64 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
+        <script>
+            function submitToAPI(e) {
+                e.preventDefault();
+                var URL = "https://jkgwql1x8b.execute-api.eu-north-1.amazonaws.com/prod";
+
+                        var Namere = /[A-Za-z]{1}[A-Za-z]/;
+                        if (!Namere.test($("#name").val())) {
+                                    alert ("Name can not less than 2 char");
+                            return;
+                        }
+                        /*var mobilere = /[0-9]{10}/;
+                        if (!mobilere.test($("#phone").val())) {
+                            alert ("Please enter valid mobile number");
+                            return;
+                        }*/
+                        if ($("#email").val()=="") {
+                            alert ("Please enter your email id");
+                            return;
+                        }
+
+                        var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+                        if (!reeamil.test($("#email").val())) {
+                            alert ("Please enter valid email address");
+                            return;
+                        }
+
+                var name = $("#name").val();
+                var phone = $("#phone").val();
+                var email = $("#email").val();
+                var desc = $("#message").val();
+                var data = {
+                    name : name,
+                    phone : phone,
+                    email : email,
+                    desc : desc
+                    };
+
+                $.ajax({
+                    type: "POST",
+                    url : "https://jkgwql1x8b.execute-api.eu-north-1.amazonaws.com/prod",
+                    dataType: "json",
+                    crossDomain: "true",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(data),
+                    
+                    success: function () {
+                    // clear form and show a success message
+                    alert("Successfull");
+                    document.getElementById("contact-form").reset();
+                location.reload();
+                    },
+                    error: function () {
+                    // show an error message
+                    alert("UnSuccessful");
+                    }});
+                }
+        </script>
+    
     </head>
 
     <body>
@@ -67,7 +125,7 @@
                 console.log(name + ', ' + email + ', ' + message);        
                 $.ajax({
                 type: "POST",                     
-                url: 'https://q0lqdi4igl.execute-api.eu-north-1.amazonaws.com/v1', contentType: 'application/json',       //https://q0lqdi4igl.execute-api.eu-north-1.amazonaws.com/v1/newFormProcessor
+                url: 'https://jkgwql1x8b.execute-api.eu-north-1.amazonaws.com/prod', contentType: 'application/json',     
                 data: JSON.stringify({                         
                 'name': name,                         
                 'email': email,                         
@@ -770,7 +828,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="custom-form mb-sm-30">
-                            <form method="post" name="myForm" onsubmit="return validateForm()">
+                            <form method="post" name="myForm">
                                 <p id="error-msg"></p>
                                 <div id="simple-msg"></div>
                                 <div class="row">
@@ -788,7 +846,7 @@
                                             </div><!--end col-->
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <input name="subject" id="subject" class="form-control border rounded" placeholder="Your subject :">
+                                                    <input name="phone" id="phone" class="form-control border rounded" placeholder="Your phone :">
                                                 </div>                                                                               
                                             </div><!--end col-->
                                         </div><!--end row-->
@@ -801,7 +859,7 @@
                                     </div><!--end col-->
 
                                     <div class="col-sm-12 text-end">
-                                        <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message</button>
+                                        <button type="button" id="submit" onClick="submitToAPI(event)" name="send" class="btn btn-primary">Send Message</button>
                                     </div>
                                 </div>
                             </form>
