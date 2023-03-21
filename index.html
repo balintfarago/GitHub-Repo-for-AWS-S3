@@ -24,150 +24,9 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-        <script>
-            function submitToAPI(e) {
-                e.preventDefault();
-                var URL = "https://jkgwql1x8b.execute-api.eu-north-1.amazonaws.com/prod";
-
-                        var Namere = /[A-Za-z]{1}[A-Za-z]/;
-                        if (!Namere.test($("#name").val())) {
-                                    alert ("Name can not less than 2 char");
-                            return;
-                        }
-                        /*var mobilere = /[0-9]{10}/;
-                        if (!mobilere.test($("#phone").val())) {
-                            alert ("Please enter valid mobile number");
-                            return;
-                        }*/
-                        if ($("#email").val()=="") {
-                            alert ("Please enter your email id");
-                            return;
-                        }
-
-                        var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-                        if (!reeamil.test($("#email").val())) {
-                            alert ("Please enter valid email address");
-                            return;
-                        }
-
-                var name = $("#name").val();
-                var phone = $("#phone").val();
-                var email = $("#email").val();
-                var desc = $("#message").val();
-                var data = {
-                    name : name,
-                    phone : phone,
-                    email : email,
-                    desc : desc
-                    };
-
-                $.ajax({
-                    type: "POST",
-                    url : "https://jkgwql1x8b.execute-api.eu-north-1.amazonaws.com/prod",
-                    dataType: "json",
-                    crossDomain: "true",
-                    contentType: "application/json; charset=utf-8",
-                    data: JSON.stringify(data),
-                    
-                    success: function () {
-                    // clear form and show a success message
-                    alert("Successfull");
-                    document.getElementById("contact-form").reset();
-                location.reload();
-                    },
-                    error: function () {
-                    // show an error message
-                    alert("UnSuccessful");
-                    }});
-                }
-        </script>
-    
     </head>
 
     <body>
-<!--
-    <script type="text/javascript">
-        function validateForm() {
-            var name = document.forms["myForm"]["name"].value;
-            var email = document.forms["myForm"]["email"].value;
-            var subject = document.forms["myForm"]["subject"].value;
-            var message = document.forms["myForm"]["message"].value;
-            document.getElementById("error-msg").style.opacity = 0;
-            document.getElementById('error-msg').innerHTML = "";
-            if (name == "" || name == null) {
-              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Name*</div>";
-              fadeIn();
-              return false;
-            }
-            else if (email == "" || email == null) {
-              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Email*</div>";
-              fadeIn();
-              return false;
-            }
-            else if (subject == "" || subject == null) {
-              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Subject*</div>";
-              fadeIn();
-              return false;
-            }
-           else if (message == "" || message == null) {
-              document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Please enter a Message*</div>";
-              fadeIn();
-              return false;
-            }
-            else {
-                //document.getElementById('error-msg').innerHTML = "<div class='alert alert-success'>*Message sent*</div>";
-                //fadeIn();
-
-                var name = $("#name").val(),
-                email = $("#email").val(),
-                message = $("#message").val();
-                console.log('TEST');
-                console.log(name + ', ' + email + ', ' + message);        
-                $.ajax({
-                type: "POST",                     
-                url: 'https://jkgwql1x8b.execute-api.eu-north-1.amazonaws.com/prod', contentType: 'application/json',     
-                data: JSON.stringify({                         
-                'name': name,                         
-                'email': email,                         
-                'message': message                     
-                }),                     
-                success: function(res){     
-                    document.getElementById('error-msg').innerHTML = "<div class='alert alert-success'>*Message sent*</div>";                    
-                },
-                error: function(){
-                    alert(res);
-                    alert(res.message);
-                    document.getElementById('error-msg').innerHTML = "<div class='alert alert-warning error_message'>*Something went wrong... We are working on it!*</div>";
-                }});
-
-                return false;
-            }
-           
-            return false;
-
-          }
-          function fadeIn() {
-            var fade = document.getElementById("error-msg");
-            var opacity = 0;
-            var intervalID = setInterval(function () {
-              if (opacity < 1) {
-                opacity = opacity + 0.5
-                fade.style.opacity = opacity;
-              } else {
-                clearInterval(intervalID);
-              }
-            }, 200);
-          }
-        </script>-->
-     
-       
-      
-              
-                    
-                
- 
-        </script>
-
         <!-- Loaderr -->
         <div id="preloader">
             <div id="status">
@@ -507,8 +366,8 @@
                                 <i data-feather="airplay" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">Route 53</h5>
-                                <p class="text-muted mt-3 mb-0">I purchased the this domain with Amazon Route 53.</p>
+                                <h5 class="title">Route 53 / S3</h5>
+                                <p class="text-muted mt-3 mb-0">I purchased the this domain with Amazon Route 53 and set up Amazon S3 to host this website.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="airplay" class="fea icons"></i>
@@ -522,8 +381,8 @@
                                 <i data-feather="aperture" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">Amazon S3</h5>
-                                <p class="text-muted mt-3 mb-0">I set up Amazon S3 to host this website.</p>
+                                <h5 class="title">Amazon CloudFront</h5>
+                                <p class="text-muted mt-3 mb-0">I am using CloudFront to distribute this site to edge locations to deliver content with low latency.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="aperture" class="fea icons"></i>
@@ -537,8 +396,8 @@
                                 <i data-feather="camera" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">Amazon CloudFront</h5>
-                                <p class="text-muted mt-3 mb-0">I am using CloudFront to distribute this site to edge locations to provide fast loading from around the world.</p>
+                                <h5 class="title">AWS Certificate Manager</h5>
+                                <p class="text-muted mt-3 mb-0">I provisioned a public TLS certificate to protect this site.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="camera" class="fea icons"></i>
@@ -552,8 +411,8 @@
                                 <i data-feather="compass" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">AWS Certificate Manager</h5>
-                                <p class="text-muted mt-3 mb-0">I provisioned a public TLS certificate to protect this site.</p>
+                                <h5 class="title">AWS CodePipeline</h5>
+                                <p class="text-muted mt-3 mb-0">I connected Visual Studio to Github and created a pipeline with AWS CodePipeline so all changes in the code are automatically pushed to this site.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="compass" class="fea icons"></i>
@@ -567,8 +426,8 @@
                                 <i data-feather="settings" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">AWS CodePipeline</h5>
-                                <p class="text-muted mt-3 mb-0">I connected Visual Studio to Github and created a pipeline with AWS CodePipeline so all changes in the code are automatically pushed to this site.</p>
+                                <h5 class="title">AWS Lambda</h5>
+                                <p class="text-muted mt-3 mb-0">I set up a Lambda function to move uploaded .xml invoice files into separate folders based on the department being invoiced (which is an xml tag), after users upload them to a designated folder in an S3 bucket.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="settings" class="fea icons"></i>
@@ -582,8 +441,8 @@
                                 <i data-feather="watch" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">24 / 7</h5>
-                                <p class="text-muted mt-3 mb-0">It is a long established fact that a reader will be distracted by the when looking at its layout.</p>
+                                <h5 class="title">AWS Lambda / SES</h5>
+                                <p class="text-muted mt-3 mb-0">Continuing the example before, I set up another Lambda function to send an email notification via AWS SES every time an invoice is uploaded to the S3 bucket.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="watch" class="fea icons"></i>
@@ -749,7 +608,7 @@
                     <div class="col-12 text-center">
                         <div class="section-title">
                             <div class="position-relative">
-                                <h4 class="title text-uppercase mb-4">Contact Me 8</h4>
+                                <h4 class="title text-uppercase mb-4">Contact Me</h4>
                                 <div>
                                     <div class="title-box"></div>
                                     <div class="title-line"></div>
@@ -823,52 +682,6 @@
             </div><!--end container-->
         </section><!--end section-->
 
-        <section class="section pt-5 mt-3">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="custom-form mb-sm-30">
-                            <form method="post" name="myForm">
-                                <p id="error-msg"></p>
-                                <div id="simple-msg"></div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-6">
-                                                <div class="form-group">
-                                                    <input name="name" id="name" type="text" class="form-control border rounded" placeholder="First Name :">
-                                                </div>
-                                            </div><!--end col-->
-                                            <div class="col-lg-12 col-md-6">
-                                                <div class="form-group">
-                                                    <input name="email" id="email" type="email" class="form-control border rounded" placeholder="Your email :">
-                                                </div> 
-                                            </div><!--end col-->
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <input name="phone" id="phone" class="form-control border rounded" placeholder="Your phone :">
-                                                </div>                                                                               
-                                            </div><!--end col-->
-                                        </div><!--end row-->
-                                    </div><!--end col-->
-
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <textarea name="message" id="message" rows="4" class="form-control border rounded" placeholder="Your Message :"></textarea>
-                                        </div>
-                                    </div><!--end col-->
-
-                                    <div class="col-sm-12 text-end">
-                                        <button type="button" id="submit" onClick="submitToAPI(event)" name="send" class="btn btn-primary">Send Message</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div><!--end custom-form-->
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
-        </section><!--end section-->
-        <!-- Contact End -->
 
    
         <footer class="footer footer-bar bg-dark">
