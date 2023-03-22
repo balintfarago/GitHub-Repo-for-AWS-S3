@@ -426,8 +426,8 @@
                                 <i data-feather="settings" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">AWS Lambda</h5>
-                                <p class="text-muted mt-3 mb-0">I set up a Lambda function to move uploaded .xml invoice files into separate folders based on the department being invoiced (which is an xml tag), after users upload them to a designated folder in an S3 bucket.</p>
+                                <h5 class="title">AWS Lambda / SES</h5>
+                                <p class="text-muted mt-3 mb-0">I set up a Lambda function to move uploaded .xml invoice files into separate folders based on the department being invoiced (which is an xml tag), after users upload them to a designated folder in an S3 bucket. Then I set up another function to send an email via AWS SES every time an invoice is uploaded to the bucket.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="settings" class="fea icons"></i>
@@ -441,8 +441,8 @@
                                 <i data-feather="watch" class="fea icon-md"></i>
                             </div>
                             <div class="content mt-4">
-                                <h5 class="title">AWS Lambda / SES</h5>
-                                <p class="text-muted mt-3 mb-0">Continuing the example before, I set up another Lambda function to send an email notification via AWS SES every time an invoice is uploaded to the S3 bucket.</p>
+                                <h5 class="title">AWS Step Functions</h5>
+                                <p class="text-muted mt-3 mb-0">I used Step Functions to invoke several Lambda functions in a purchase flow (add to cart, make payment, thank you) and pass variables among the different steps.</p>
                             </div>
                             <div class="big-icon">
                                 <i data-feather="watch" class="fea icons"></i>
