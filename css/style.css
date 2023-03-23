@@ -169,6 +169,17 @@ a.text-muted:hover, a.text-muted:focus {
   color: #68788f !important;
 }
 
+.text-blog { /*BALINT*/
+  color: #606767 !important;
+  letter-spacing: 0.0em;
+  line-height: 1.4;
+  font-weight: 100;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+}
+
+
+
 .bg-light {
   background-color: #f9fafd !important;
 }
@@ -1534,6 +1545,12 @@ p {
   background-position: center center;
 }
 
+.blog_image {
+  width:75%;
+  border:1px solid lightblue;
+  margin-bottom:14px;
+}
+
 .mouse-icon {
   position: absolute;
   left: 0;
@@ -2470,4 +2487,6 @@ ul .t-ltr-dark {
     display: none;
   }
 }
+
+
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="I created this website to showcase my Amazon Web Services knowledge" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="blog/Step Functions/Creating_chain_with_AWS_Step_Functions.html">Step Functions</a>
+                                            <a class="dropdown-item" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>Creating a chain with AWS Step Functions </h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">22nd March, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">In this example we’re going to do something very exciting. We're going to model a purchase flow where the customer purchases a product, makes a payment and is shown a Thank you page.</p>
+                                <p class="text-blog"><b>These are the steps of this flow:</b></p>
+                                <ol class="text-blog">
+                                    <li>The State Machine calls a Lambda Function with 2 variables: product name and product price</li>
+                                    <li>The Lambda Function checks if both variables have value and returns a product id</li>
+                                    <li>The State Machine calls a second Lambda Function to make a payment</li>
+                                    <li>This second Lambda Function checks if the paid amount equals the product's price and responds with a value</li>
+                                    <li>Finally, the State Machine calls a third Lambda Function to thank the customer for the purchase and displays the product ID generated in Step No.2</li>
+                                </ol>
+
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create a role for the State Machine</li>
+                                    <li>Define a State Machine</li>
+                                    <li>Create a Lambda Function (three, actually)</li>
+                                    <li>Storing and reusing variables</li>
+                                </ol>
+                                    
+                                <p class="text-blog">Let’s start with creating the first part of the flow. We’re going to create a <b>Step Function</b> that invokes a <b>Lambda Function</b> with 2 parameters, product name and product price and waits for the response. We’re also going to create a <b>Lambda function</b> that evaluates these variables and returns these together with a product id, which is generated by the Lambda function itself.</p>
+                                
+                                <h5>1. Create a Role for the State Machine</h5>
+                                <p class="text-blog">First, we need to create a role that allows an <b>IAM user</b> (the state machine) to invoke a <b>Lambda function</b>.</p>
+                                <p class="text-blog">Go into <a href="https://us-east-1.console.aws.amazon.com/iamv2/home" target="_blank">IAM</a>, click <b>Roles</b> in the left pane and click <b>Create role</b>. Keep AWS service selected as the entity type and select <b>Lambda</b> as use case. Click <b>Next</b>.</p>
+                                <img src="images/IAM_Role_1.png" class="blog_image"></img>
+                                <p class="text-blog">Search for and select <b>AWSLambdaRole</b>. Click <b>Next</b> again.</p>
+                                <p class="text-blog">Provide a role name (I named it <i>RoleForPurchaseFlow</i>) and click <b>Create role</b>. Our role is now ready to use.</p>
+                                
+                                <h5>2. Define a State Machine</h5>
+                                <p class="text-blog">Open <a href="https://eu-north-1.console.aws.amazon.com/states/home" target="_blank">Step Functions</a> and make sure the region is set to your preferred one. Click <b>Create state machine</b>.</p>
+                                <p class="text-blog">Select <b>Write your workflow in code</b>. For the type, select <b>Standard</b>.</p>
+                                <img src="images/StateMachine_1.png" class="blog_image"></img>
+
+                                <p class="text-blog">Scroll down and in the <b>Definition</b> block you see a very basic flow. It has 2 states, Hello and World. The Hello step is a Pass type, which tells the state machine to go to the next state, called World. Change the code to this:</p>
+                                <pre style="font-size:10px;"><code class="lang-json">
+{
+    "StartAt": "LambdaFunction_AddToCart",
+    "States": {
+        "LambdaFunction_AddToCart": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromAddToCart",
+            "Parameters": {
+                "product_name": "Television",
+                "product_price": 1500
+            },
+            "Next": "CheckStatusFrom_AddToCart"
+        },
+        "CheckStatusFrom_AddToCart": {
+            "Type": "Choice",
+            "Choices": [
+                {
+                    "Variable": "$.statusCode",
+                    "NumericEquals": 200,
+                    "Next": "Success_AddToCart"
+                },
+                {
+                    "Variable": "$.statusCode",
+                    "NumericEquals": 400,
+                    "Next": "Fail_AddToCart"
+                }
+            ]
+        },
+        "Success_AddToCart": {
+            "Type": "Pass",
+            "End": true
+        },
+        "Fail_AddToCart": {
+            "Type": "Fail"
+        }
+    }
+}
+                                </code></pre>
+
+                                <p class="text-blog">All right, let me explain what this means.</p>
+                                <p class="text-blog">The flow starts at <b>LambdaFunction_AddToCart</b>. This is a task that invokes a Lambda function with 2 parameters: product_name and product_price. We will create this <b>Lambda function</b> later. The next step is the <b>CheckStatusFrom_AddToCart</b> step which has 2 choices: If the <b>Lambda function</b> returns 200 as the statusCode then move on to the <b>Success_AddToCart</b> step. If the returned value is 400, it moves onto the <b>Failed_AddToCart</b> step:</p>
+                                <img src="images/StateMachine_2.png" class="blog_image"></img>
+
+
+                                <p class="text-blog">Click <b>Next</b>. Provide a name for the function (I named it <i>MyPurchaseMachine</i>) and let AWS create a role for it.</p>
+                                <img src="images/StateMachine_3.png" class="blog_image"></img>
+                                <p class="text-blog">If you now scroll down, you see the execution list. It is now empty, because we don’t have any executions yet.</p>
+
+                                <h5>3. Create a Lambda Function</h5>
+                                <p class="text-blog">Open <a href="https://eu-north-1.console.aws.amazon.com/lambda/home" target="_blank">Lambda</a> and click <b>Create function</b>. Choose <b>Author from scratch</b>, provide a name (I named it <i>step-function-checkStatusFromAddToCart</i>) and select <b>Python3.9</b> as runtime environment. On the image below, AWS highlighted the Function name with red because I already created this function. Select our newly created IAM role (<b>RoleForPurchaseFlow</b>) as the role. Click <b>Create Function</b>.</p>
+                                <img src="images/LambdaFunction_1.png" class="blog_image"></img>
+                                <p class="text-blog">Now that the <b>Lambda Function</b> is created, we can modify its default code. Change it to this:</p>
+                                <pre style="font-size:10px;"><code class="lang-json">
+def lambda_handler(event, context):
+    print(event)
+    product_name = event['product_name']
+    product_price = int(event['product_price'])
+                                    
+    print("product_name:: ", product_name)
+    print("product_price:: ", product_price)                                   
+                                
+    product_id = "89245"
+                                    
+    if product_name == "" or product_price == "":
+        statusCode = 400
+        msg = 'Product name {0} or Product price {1} or product id {2} not found'.format(product_name, product_price, product_id)
+    else:
+        statusCode = 200
+        msg = 'Product name {0} and Product price {1} and product id {2} found'.format(product_name, product_price, product_id)
+                                    
+    print("msg:: ", msg)
+    return {
+            'statusCode': statusCode,
+            'productID': product_id,
+            'body': msg
+    }
+                                </code></pre>
+
+                                <p class="text-blog">In this code we read the 2 parameters from the event variable and put them into local variables. Then we generate a product id. If either of the variables received are empty, create a variable (statusCode = 400) or if both have values, assign this variable a statusCode of 200. Finally, in the return block we define those variables we would like to return to the State Machine. We send back the statusCode, the productID and the msg. The msg is just for informative purposes, we're not processing its content. </p>
+                                <p class="text-blog">Let’s test our code first with Lambda’s built-in test functionality. Click <b>test</b>. Provide a test name, such as <i>testAddProductToCart</i> and create the keys and values. The keys are the 3 variables we have in this code and the values are just some values you can provide for the code. Click <b>Save</b>.</p>
+                                <img src="images/TestStateMachine_1.png" class="blog_image"></img>
+                              
+                                <p class="text-blog">Click <b>Test</b> and in a new tab of the <b>Code source</b> the results will be shown. All right, we received statusCode 200 and we see the all the other variables as well.</p></b>
+                                <img src="images/TestStateMachine_2.png" class="blog_image"></img>
+                                <p class="text-blog">Finally, copy the <b>ARN</b> of the Lambda Function and paste it in the <b>Resource</b> tag of the <b>Step Function's</b> code. The <b>ARN</b> identifies which <b>Lambda Function</b> this <b>Step Function</b> should invoke. Here:</p>
+                                <pre style="font-size:10px;"><code class="lang-json">
+    "StartAt": "LambdaFunction_AddToCart",
+    "States": {
+        "LambdaFunction_AddToCart": {
+            "Type": "Task",
+            "Resource": "arn:aws:lambda:...",     <---- ADD YOUR ARN HERE
+            "Parameters": {
+                "product_name": "Television",
+                "product_price": 1500
+            },
+            "Next": "CheckStatusFrom_AddToCart"
+        },
+    }
+                                </code></pre>
+                                <p class="text-blog">Let’s execute the state machine now. If your code successfully runs, everything should be green. As you see on the right side we received the <b>product ID</b> from the Lambda Function.</p>
+                                <img src="images/StateMachine_4.png" class="blog_image"></img>
+                                
+                                
+                                <p class="text-blog">Now let’s add another step to our code. Once we added the product to the cart, we need to make a payment. Change your code to this:</p>
+                                <pre style="font-size:10px;"><code class="lang-json">
+{
+  "StartAt": "LambdaFunction_AddToCart",
+  "States": {
+    "LambdaFunction_AddToCart": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromAddToCart",
+      "Parameters": {
+        "product_name": "Television",
+        "product_price": 1500
+      },
+      "Next": "CheckStatusFrom_AddToCart"
+    },
+    "CheckStatusFrom_AddToCart": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "LambdaFunction_MakePayment"
+        },
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 400,
+          "Next": "Fail_AddToCart"
+        }
+      ]
+    },
+    "LambdaFunction_MakePayment": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromPayment",
+      "Parameters": {
+        "product_price": 1500,
+        "paid_price": 1500
+      },
+      "Next": "CheckStatusFrom_Payment"
+    },
+    "Fail_AddToCart": {
+      "Type": "Fail"
+    },
+    "CheckStatusFrom_Payment": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "Success_Payment"
+        },
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 400,
+          "Next": "Fail_Payment"
+        }
+      ]
+    },
+    "Success_Payment": {
+      "Type": "Pass",
+      "End": true
+    },
+    "Fail_Payment": {
+      "Type": "Fail"
+    }
+  }
+}
+</code></pre>
+
+                                <p class="text-blog">If the graph does not refresh on the right side, click the refresh icon in the top-left corner of the graph.</p>
+                                <p class="text-blog">All right, what happened here?</p>
+                                <p class="text-blog">If we receive a statusCode=200 from the <b>Lambda Function</b> that verifies that we the product has a name and a price, we move onto the next step, called <b>LambdaFunction_MakePayment</b>. This step will invoke another <b>Lambda function</b> that will check if the paid amount equals the product’s price. If it does, we move onto the <b>Success_Payment</b>option. Otherwise we finish with <b>Fail_Payment</b>.</p>
+                                <p class="text-blog">Let’s create the second <b>Lambda Function</b> and call it <i>step-function-checkStatusFromPayment</i>. Assign the same role to this function that you assigned to the first one and change the default code to this:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-json">
+def lambda_handler(event, context):
+    print(event)
+    product_price = int(event['product_price'])
+    paid_price = int(event['paid_price'])
+    
+    print("product_price:: ", product_price)
+    print("paid_price:: ", paid_price)
+    
+    if paid_price == product_price:
+        statusCode = 200
+        msg = 'Paid price {0} equals Product price {1}'.format(paid_price, product_price)
+    else:
+        statusCode = 400
+        msg = 'Paid price {0} does not equal Product price {1}'.format(paid_price, product_price)
+    
+    print("msg:: ", msg)
+    return {
+        'statusCode': statusCode,
+        'body': msg
+    }
+</code></pre>
+
+                                <p class="text-blog">Again, test the code first with the test parameters. Don’t forget to put the <b>ARN</b> of this new <b>Lambda Function</b> into the <b>Resource</b> tag of the <b>Success_AddToCart</b> step.</p>
+                                <p class="text-blog">Now let’s run the Step Function. </p>
+                                <p class="text-blog">Ooops, I ran into a strange issue:</p>
+
+                                <img src="images/LambdaInvokeIssue_0.png" class="blog_image"></img>
+                                <p class="text-blog">I didn’t understand why it had an invokation error if I assigned the same role to both functions. Then I checked the IAM role of my state machine and saw this:</p>
+                                <img src="images/LambdaInvokeIssue_2.png" class="blog_image"></img>
+            
+                                <p class="text-blog">The second Lambda Function was missing from the policy. We can fix this 2 ways. One solution is to use the Visual Editor to add the second ARN to the policy by clicking on Add ARN to restrict access. The second solution is to manually modify the JSON. I will show you the latter because visually it better describes the result:</p>
+                                <img src="images/LambdaInvokeIssue_3.png" class="blog_image"></img>
+                               
+                                <p class="text-blog">Now if we execute the Step Function again, it works like a charm:</p>
+                                <img src="images/LambdaInvokeIssue_4.png" class="blog_image"></img>
+
+
+                                <p class="text-blog">Ok, so now we only need one last step, which is thanking the customer for the purchase. But in order to do that, remember that we wanted to show the <b>product id</b> on this last page? In the first example, we had the <b>product id</b> as a return value after <b>CheckStatusFrom_AddToCart</b>. We also had that in the next step, which was then called <b>Success_AddToCart</b>. So how do we store and use this variable in subsequent steps?</p>
+                                
+                                <h5>4. Storing and reusing variables</h5>
+
+                                <p class="text-blog">We can store variables with ResultPath, InputPath and OutputPath.</p>
+                                <p class="text-blog">In our code let's add <b>"ResultPath": "$.purchase"</b> to the first task, <b>LambdaFunction_AddToCart</b>. This tells the state machine to WHAT?</p>
+                                <p class="text-blog">In <b>LambdaFunction_MakePayment</b> let's add <b>"product_id.$": "$.productID"</b> as a third parameter to send it to the second <b>Lambda Function</b>. That function doesn't do anything with that parameter, we are only doing this to check if we are able to use a variable that was received from a <b>Lambda Function</b>.</p>
+                                <p class="text-blog">If you run execute the state machine now, it will run into an error:</p>
+                                <img src="images/ResultPathError_1.png" class="blog_image"></img>
+                                <p class="text-blog">Using <b>ResultPath</b> only is not enough. We need to store the variables in an <b>InputPath</b> as well. But where should we add it? Well, we can't add it to the first task, because that is where our flow starts, so there is no value we could store in <b>InputPath</b>. Because we receive the return value at the end of <b>LambdaFunction_AddToCart</b>, we can add <b>"InputPath": "$.purchase"</b> to the subsequent Choice step. I named this $.purchase but you can name it anyway you want.</p>
+                                <pre style="font-size:10px;"><code class="lang-json">
+{
+  "StartAt": "LambdaFunction_AddToCart",
+  "States": {
+    "LambdaFunction_AddToCart": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromAddToCart",
+      "Parameters": {
+        "product_name": "Television",
+        "product_price": 1500
+      },
+      "ResultPath": "$.purchase",           <--- ResultPath
+      "Next": "CheckStatusFrom_AddToCart"
+    },
+    "CheckStatusFrom_AddToCart": {
+      "Type": "Choice",
+      "InputPath": "$.purchase",            <--- InputPath
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "LambdaFunction_MakePayment"
+        },
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 400,
+          "Next": "Fail_AddToCart"
+        }
+      ]
+    },
+    "LambdaFunction_MakePayment": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromPayment",
+      "Parameters": {
+        "product_price": 1500,
+        "paid_price": 1500,
+        "product_id.$": "$.productID"
+      },
+      "Next": "CheckStatusFrom_Payment"
+    },
+    "Fail_AddToCart": {
+      "Type": "Fail"
+    },
+    "CheckStatusFrom_Payment": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "Success_Payment"
+        },
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 400,
+          "Next": "Fail_Payment"
+        }
+      ]
+    },
+    "Success_Payment": {
+      "Type": "Pass",
+      "End": true
+    },
+    "Fail_Payment": {
+      "Type": "Fail"
+    }
+  }
+}
+</code></pre>
+
+
+
+                                <p class="text-blog">All right, so we were able to forward the <b>product id</b> parameter to the next step. If you click through the steps in the <b>Graph view</b>, you'll see that we still have this variable in the <b>LambdaFunction_MakePayment</b> step, but it's missing afterwards. Let's try this out by creating and invoking the third, and last <b>Lambda Function</b>.</p>
+                                
+                                <p class="text-blog">Let's create the third <b>Lambda Function</b>. Here we are expecting 2 parameters, <b>product_name</b> and <b>product_id</b>. If we receive both, we'll say Thank you and send back a statusCode that the state machine will use to decide to end the flow with <b>Success_Payment</b> or <b>Fail_Payment</b>.</p>
+                                <pre style="font-size:10px;"><code class="lang-json">
+def lambda_handler(event, context):
+    print(event)
+    product_name = event['product_name']
+    product_id = event['product_id']
+
+    print("product_name:: ", product_name)
+    print("product_id:: ", product_id)
+
+    msg = 'Thank you for your purchase. Your {0} is on its way! Product ID is {1}.'.format(product_name, product_id)
+    if product_name == "" or product_id == "":
+        statusCode = 400
+        msg = 'Product name {0} or Product id {1} not found'.format(product_name, product_id)
+    else:
+        statusCode = 200
+        msg = 'Thank you for your purchase. Your {0} is on its way! Product ID is {1}.'.format(product_name, product_id)
+    
+    print("msg:: ", msg)
+    return {
+        'statusCode': statusCode,
+        'body': msg
+    }
+                                </code></pre>
+                                
+                                <p class="text-blog">Let's modify our state machine by adding a new step to invoke the newly created <b>Lambda Function</b>. Don't forget to add the <b>ARN</b> of that function to the <b>resource</b> tag of the step.</p>
+
+                                <pre style="font-size:10px;"><code class="lang-json">
+{
+  "StartAt": "LambdaFunction_AddToCart",
+  "States": {
+    "LambdaFunction_AddToCart": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromAddToCart",
+      "Parameters": {
+        "product_name": "Television",
+        "product_price": 1500
+      },
+      "ResultPath": "$.purchase",
+      "Next": "CheckStatusFrom_AddToCart"
+    },
+    "CheckStatusFrom_AddToCart": {
+      "Type": "Choice",
+      "InputPath": "$.purchase",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "LambdaFunction_MakePayment"
+        },
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 400,
+          "Next": "Fail_AddToCart"
+        }
+      ]
+    },
+    "LambdaFunction_MakePayment": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-checkStatusFromPayment",
+      "Parameters": {
+        "product_price": 1500,
+        "paid_price": 1500,
+         "product_id.$": "$.productID"
+      },
+      "Next": "CheckStatusFrom_Payment"
+    },
+    "Fail_AddToCart": {
+      "Type": "Fail"
+    },
+    "CheckStatusFrom_Payment": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 200,
+          "Next": "LambdaFunction_ThankYou"
+        },
+        {
+          "Variable": "$.statusCode",
+          "NumericEquals": 400,
+          "Next": "Fail_Payment"
+        }
+      ]
+    },
+    "LambdaFunction_ThankYou": {
+        "Type": "Task",
+        "Resource": "arn:aws:lambda:eu-north-1:413975335361:function:step-function-ThankYou",
+        "Parameters": {
+          "product_name": "Television",
+          "product_id.$": "$.productID"
+        },
+        "Next": "Success_Payment"
+      },
+    "Success_Payment": {
+      "Type": "Pass",
+      "End": true
+    },
+    "Fail_Payment": {
+      "Type": "Fail"
+    }
+  }
+}
+                                </code></pre>
+                               
+                                <p class="text-blog">Now if we execute this code, it will run into an error.</p>
+                                <img src="images/ResultPathError_2.png" class="blog_image"></img>
+                                <p class="text-blog">Remember, I told you we lost the <b>$.purchase</b> value somewhere. We just need to repeat what we did before. Let's add <b>"ResultPath": "$.purchase"</b> to <b>LambdaFunction_MakePayment</b>. This time we don't need to add <b>"InputPath": "$.purchase"</b> to the Choice step, because the <b>InputPath</b> is already defined and here we are just refreshing the path's content.</p>
+                                <p class="text-blog">Now we run into a familiar error:</p>
+                                <img src="images/LambdaInvokeIssue_5.png" class="blog_image"></img>
+
+                                <p class="text-blog">We can quickly resolve this by adding the third <b>Lambda Function</b> to the IAM role's policy of the <b>State Machine</b>. You have the option to enable the <b>State Machine</b> to invoke all Lambda Functions as well, but that goes against the least privilege rule of AWS. I show you how to do this, but I don't suggest it:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-json">
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "lambda:InvokeFunction",
+            "Resource": "*"
+        }
+    ]
+}
+</code></pre>
+
+
+                                <p class="text-blog">All right, let's execute our state machine again.</p>
+                                <img src="images/FinishFlow.png" class="blog_image"></img>
+
+                                <p class="text-blog">Our code runs flawlessly and we even receive the <b>product id</b> back from the <b>LambdaFunction_ThankYou</b> in <b>Success_Payment</b> step!</p>
+                                <p class="text-blog">One last note: I said we don't need to add <b>"InputPath": "$.purchase"</b> to the second Choice step, because it's already defined. Imagine that you generate a different <b>product id</b> in the <b>LambdaFunction_MakePayment</b> step. If you'd like to update and display the new value of <b>$.productID</b> on the Thank you page, you need to add <b>InputPath</b> to the Choice step afterwards.</p>
+
+                     
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>
