@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="I created this website to showcase my Amazon Web Services knowledge" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>Move files in an S3 bucket with AWS Lambda and send an email with SES</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">24th March, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">Imagine there is a designated a folder in an Amazon S3 bucket where suppliers uploaded invoices. Each invoice is an .xml file and one tag in the files includes the department being invoiced. We are going to create a Lambda function that moves the files to respective department folders and send email every time an invoice is uploaded.</p>
+                                
+                                
+                                <p class="text-blog"><b>These are the steps of this flow:</b></p>
+                                <ol class="text-blog">
+                                    <li>The State Machine calls a Lambda Function with 2 variables: product name and product price</li>
+                                    <li>The Lambda Function checks if both variables have value and returns a product id</li>
+                                    <li>The State Machine calls a second Lambda Function to make a payment</li>
+                                    <li>This second Lambda Function checks if the paid amount equals the product's price and responds with a value</li>
+                                    <li>Finally, the State Machine calls a third Lambda Function to thank the customer for the purchase and displays the product ID generated in Step No.2</li>
+                                </ol>
+
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create an S3 bucket</li>
+                                    <li>Create a Lambda function to move the uploaded files</li>
+                                    <li>Add a trigger for our Lambda function</li>
+                                    <li>Add the code to our Lambda function</li>
+                                    <li>Verify email and domain</li>
+                                    <li>Create a Lambda function to send email</li>
+                                    <li>Connect the 2 Lambda functions</li>
+                                </ol>
+                                    
+                                <p class="text-blog">Let’s start with creating the first part of the flow. We’re going to create a <b>Step Function</b> that invokes a <b>Lambda Function</b> with 2 parameters, product name and product price and waits for the response. We’re also going to create a <b>Lambda function</b> that evaluates these variables and returns these together with a product id, which is generated by the Lambda function itself.</p>
+                                
+                                <h5>1. Create an S3 bucket</h5>
+                                <p class="text-blog">Open <a href="https://s3.console.aws.amazon.com/s3/buckets" target="_blank">Amazon S3</a> and click <b>Create bucket</b>. Add a name (I named it <i>xmlsort</i>. Keep everything as it is and make sure the <b>Block all public access</b> checkbox is selected, because outside this example you don't want anyone else to upload files in your bucket.</p>
+                                
+                                
+                                
+                                
+                                <img src="images/Create-S3-Bucket.png" class="blog_image"></img>
+                                <p class="text-blog">Click on your newly created bucket and click <b>Create folder</b> a folder (I named it <i>incoming</i>).</p>
+                                <p class="text-blog">Finally, create a simple 2-liner xml file (I named it <i>invoice_department_IT.xml</i>):</p>
+                                <pre style="font-size:10px;"><code class="language-xml">
+&lt;data>    
+    &lt;data-source>IT&lt;/data-source>    
+    &lt;data-content>$15,000&lt;/data-content>
+&lt;/data>
+
+</code></pre>
+                                <br/>
+                                <h5>2. Create a Lambda function to move the uploaded files</h5>
+                                <p class="text-blog">Select <b>Author from scratch</b>, provide a name (I named it <i>xmlsort</i>) and select Python3.9 as the runtime environment. Click <b>Create function</b>.</p>
+                                <p class="text-blog">Lambda automatically creates an <b>IAM role</b> for you with the function. You need to ensure that the Lambda function’s <b>IAM role has</b> permission to access and/or manage the AWS services you connect to from inside your function. In this case we need to add a permission to this IAM role to enable access to our S3 bucket. In the <b>Lambda function</b>, click <b>Configuration</b> tab, select <b>Permissions</b> in the left pane and click on the role. It takes you to the <b>IAM console</b>. Here click <b>Add permissions</b> and select <b>AmazonS3FullAccess</b> permission. Click <b>Add permissions</b>.</p>
+                                <img src="images/IAM-permission.png" class="blog_image"></img>
+                                <p class="text-blog">Note: Enabling the <b>IAM role</b> to have access to all your buckets is not safe, so you should only provide access to individual buckets. Just click <b>Add permissions</b> and select <b>Create inline policy</b>. Use the Visual Editor and select <b>S3</b> as the <b>service</b>. For actions, we only need 4 permissions to read and write objects in our bucket. For the bucket, select your bucket:</p>
+                                <img src="images/IAM-permission2.png" class="blog_image"></img>
+                                <p class="text-blog">This is how it will look like in JSON:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::xmlsort"
+        }
+    ]
+}
+                                </code></pre>
+
+                                <br/><br/>
+                                <h5>3. Add a trigger for our Lambda function</h5>
+                                <p class="text-blog">We want the <b>Lambda function</b> to be invoked every time an XML file is uploaded to the <b>incoming</b> folder. To do this, we will use an S3 bucket <b>PUT</b> event as a trigger for our function.</p>
+                                <p class="text-blog">Go back to <b>Lambda</b> and click <b>+Add trigger</b>. Select S3 then the newly created bucket and select PUT as Event type. Type <b>/incoming</b> for the prefix and <b>.xml</b> for the suffix.</p>
+                                <img src="images/Add-trigger.png" class="blog_image"></img>
+                                <p class="text-blog">The trigger should appear on the graph:</p>
+                                <img src="images/Lambda-trigger.png" class="blog_image"></img>
+                                <br/><br/>
+                                <h5>4. Add the code to our Lambda function</h5>
+                                <p class="text-blog">Switch to the code tab of our <b>Lambda function</b> and change the default code to this:</p>
+                                
+                                <pre style="font-size:10px;"><code class="language-python">
+import json
+import boto3
+import uuid
+from urllib.parse import unquote_plus
+import xml.etree.ElementTree as ET
+def lambda_handler(event, context):
+    s3 = boto3.resource('s3', region_name='eu-north-1') # Replace with your region name
+    
+    # Loops through every file uploadedd
+    for record in event['Records']:
+        bucket_name = record['s3']['bucket']['name']
+        bucket = s3.Bucket(bucket_name)
+        key = unquote_plus(record['s3']['object']['key'])
+       
+        # Temporarily download the xml file for processing
+        tmpkey = key.replace('/', '')
+        download_path = '/tmp/{}{}'.format(uuid.uuid4(), tmpkey)
+        bucket.download_file( key, download_path)
+        folder = get_department_from_file(download_path)    # get the department from the first line of the XML
+        bucket.upload_file(download_path, folder+'/'+key[9:])  # upload (copy) the file a folder defined by the department
+        
+        s3.Object(bucket_name,key).delete()  # delete the original file
+def get_department_from_file(path):
+    tree = ET.parse(path)
+    root = tree.getroot()
+    return root[0].text  # the first line of the xml file is marked with [0]
+                                </code></pre>
+                                
+                                <p class="text-blog">Replace the region name with yours. If you don't know Python, no worries. I added the explanations to the code.</p>
+                                <p class="text-blog">Whenever Lambda runs your function, it passes a context object and an event object to it. This object can be used to get information about the function itself and its invocation, eg., function name, memory limit, log group id etc. The context object can be very useful for logging, monitoring and data analytics usages.</p>
+                                <p class="text-blog">The event object is used by <b>Lambda</b> to provide specific information to the <b>Lambda Function</b> from the AWS service that invoked the function. The information, which originally comes in JSON format, is converted to an object before being passed into the function. In the code above, you can see that the event object has been used to get the name of the <b>S3 bucket</b> and the key of the object inside the <b>S3 bucket</b> that triggered our function.</p>
+                                <p class="text-blog">Press the <b>Deploy</b> button and your function should be ready to run.</p>
+                                <p class="text-blog">Now upload the xml file we created in Step No.1 to the <b>incoming</b> folder and see if it gets moved to a new folder, created by the function. To me it took about a couple of minutes for the function to start working.</p>
+                                
+                                <img src="images/File-moved.png" class="blog_image"></img>
+                                <p class="text-blog">There we go. The IT folder was created. Click the folder and check if the file is there. Also check if the file is deleted from the <b>incoming</b> folder.</p>
+                                <p class="text-blog">The tags in the xml file can be whatever you would like.</p>
+                                
+                                <pre style="font-size:10px;"><code class="language-xml">
+&lt;data>    
+    &lt;date>24 March 2023&lt;/date>    
+    &lt;dept>Legal&lt;/dept>
+    &lt;amount>$15,000&lt;/amount>
+    &lt;invoiceNumber>1353315&lt;/invoiceNumber>
+&lt;/data>
+                                </code></pre>
+                                <p class="text-blog">Note that now the department is in the <b>second tag</b> of the xml, so I modified the last row in the Lambda function's code to return root[0].text</p>
+
+                                <pre style="font-size:10px;"><code class="language-python">
+return root[1].text
+                                </code></pre>
+                                <br/><br/>
+                                <h5>5. Verify email and domain</h5>
+                                <p class="text-blog">Before we can send an email to an address, we need to verify that email first. Domain verification is more required for transactional messages, but it's best if we do both now.</p>
+                                <p class="text-blog">First, let’s create an email identity.</p>
+                                <p class="text-blog">Sign into <a href="https://eu-north-1.console.aws.amazon.com/ses/home" target="_blank">Amazon Simple Email Service</a> and under <b>Configuration</b>, choose <b>Verified identities</b>. Choose <b>Create identity</b>.</p>
+                                <p class="text-blog">Choose <b>Email address</b> as the identity type. Enter the email address you want to use. This should be a valid email address able to send and receive emails. For now let’s use balintfarago@gmail.com, so when I will receive an email, it will look like it was sent from myself. Of course, we can create a real email address as well with Amazon, but we don’t need that now.</p>
+                                <img src="images/Create-email-identity.png" class="blog_image"></img>
+                                <p class="text-blog">You should receive a verification email within 5 minutes. Once you receive it, click the link inside. After the verification is complete, the <b>Identity status</b> updates to <b>Verified</b>.</p>
+                                <img src="images/Verified-email-identity.png" class="blog_image"></img>
+
+                                <p class="text-blog">Now, let's create a domain identity.</p>
+                                <p class="text-blog">A domain identity (domain verification) confirms to <b>SES</b> that you’re the identity owner, eliminating the need for TXT records.</p>
+                                <p class="text-blog">Open SES again and choose <b>Verified Identities</b>. Choose <b>Create identity</b>. Under <b>Identity details</b>, select <b>Domain</b> as the type of identity you want to create. Enter the name of the domain. Ensure that the Enabled box is checked in the <b>DKIM signatures</b> field. Click <b>Create identity</b>.</p>
+                                <img src="images/Domain-identity-1.png" class="blog_image"></img>
+                                <img src="images/Domain-identity-2.png" class="blog_image"></img>
+                                <p class="text-blog">Note: if your domain is registered with <b>Amazon Route 53</b>, <b>Amazon SES</b> will automatically update your domain’s DNS server with the necessary records. To me this happened in a second and all 3 CNAME records were added to <b>Route 53</b> and after refreshing <b>SES</b>, the <b>Identify status</b> was changed to <b>Verified</b>. If your domain is registered with a different DNS provider, you need to add the CNAME records yourself.</p>
+                               
+                                <br/><br/>
+                                <h5>6. Create a Lambda function to send email</h5>
+
+                                <p class="text-blog">Let's create a <b>Lambda Function</b> that will send the email. Open <b>Lambda</b> and click <b>Create function</b>. Provide a name (I named it <i>sendEmailFunction</i> and select a Node.js version as runtime environment. Click <b>Create function</b>.</p>
+                                <p class="text-blog">I already mentioned when you create a new <b>Lambda Function</b>, Amazon automatically creates an <b>IAM role</b> for it. This is just a basic role and it doesn't enable our function to use <b>SES</b> for sending emails. Click on the role to go to <b>IAM console</b>.</p>
+                                <img src="images/Lambda-function-role.png" class="blog_image"></img>
+                                <p class="text-blog">Here click <b>Add permissions</b> and select <b>Create inline policy</b>. From the list select <b>LambdaToSESPolicy</b> permission then click <b>Review policy</b> then <b>Create policy</b>.</p>
+                                <p class="text-blog">Now change the default code of the <b>Lambda Function</b> to the following:</p>
+
+                                <pre style="font-size:10px;"><code class="language-javascript">
+var aws = require("aws-sdk");
+var ses = new aws.SES({ region: "eu-north-1" });
+export const handler = async function (event) {
+  var params = {
+    Destination: {
+      ToAddresses: ["balintfarago@gmail.com"],
+    },
+    Message: {
+      Body: {
+        Text: { Data: "Test" },
+      },
+
+      Subject: { Data: "Test Email" },
+    },
+    Source: "balintfarago@gmail.com",
+  };
+ 
+  return ses.sendEmail(params).promise()
+};
+                                </code></pre>
+                                <p class="text-blog">Don't forget to change the region and email address to yours. If you now click Test, you should receive an email.</p>
+
+                                <p class="text-blog">Now if you selected the latest Node.js environment, you'll probably run into an error saying "<i>require is not defined in ES module scope, you can use import instead</i>". This is caused by Node.js runtime version >= 14 where the require is not necessary any more. To resolve this, add these 2 lines to the beginning of the code:</p>
+
+                                <pre style="font-size:10px;"><code class="language-javascript">
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+                                </code></pre>
+
+                                <br/><br/>
+                                <h5>7. Connect the 2 Lambda functions</h5>
+                                <p class="text-blog">All right, we just need to connect this Lambda Function to the first one, so once someone uploads a file to the S3 bucket and that file is moved to its respective folder, an email should be sent.</p>
+                                <p class="text-blog">Click <b>+Add destination</b>. Keep <b>Asynchronous invocation</b> selected and select <b>On success</b> for the <b>Condition</b>. Select <b>Lambda function</b> as <b>Destination type</b> and select the newly created function from the list.</p>
+                                <img src="images/Add-destination.png" class="blog_image"></img>
+                                <p class="text-blog">Now this is how the graph looks like:</p>
+                                <img src="images/Lambda-graph-trigger-destination.png" class="blog_image"></img>
+
+                                <p class="text-blog">Let's upload a file now to our S3 bucket and give yourself a pat on the shoulder if you received the email.</p>
+                                <img src="images/Email-received.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">When a function is invoked successfully, <b>Lambda</b> routes the record to the destination resource for every successful invocation. If a function invocationf fails, you can route the result to the destination by selecting <b>On Failrue</b> for the <b>Condition</b>. You can use this to monitor the health of your serverless applications via execution status or build workflows based on the invocation result.</p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>

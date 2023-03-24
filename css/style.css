@@ -1428,6 +1428,7 @@ p {
 
 .nav-sticky.navbar-custom .navbar-nav .nav-item .nav-link {
   color: #2f3545;
+  outline:none;
 }
 
 .nav-sticky.navbar-custom .navbar-nav .nav-item .nav-link:hover, .nav-sticky.navbar-custom .navbar-nav .nav-item .nav-link.active, .nav-sticky.navbar-custom .navbar-nav .nav-item .nav-link:active {
@@ -2487,6 +2488,9 @@ ul .t-ltr-dark {
     display: none;
   }
 }
-
+a.unclickable {
+  display: inline-block;
+  pointer-events: none;
+}
 
 /*# sourceMappingURL=style.css.map */

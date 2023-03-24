@@ -81,8 +81,9 @@
                                 <div class="container mx-0 mx-md-0">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <a class="dropdown-item" href="blog/Step Functions/Creating_chain_with_AWS_Step_Functions.html">Step Functions</a>
-                                            <a class="dropdown-item" href="">More on the way!</a>
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
                                         </div><!--end col-->
                                     </div><!--end row-->
                                 </div><!--end container-->
@@ -110,7 +111,7 @@
                         <div class="blog position-relative overflow-hidden shadow rounded">
                             <div class="section-title text-center">
                                 <div class="position-relative">
-                                    <h4 class="title"><br/><br/>Creating a chain with AWS Step Functions </h4>
+                                    <h4 class="title"><br/><br/>Call a series of Lambda functions with Step Functions</h4>
                                     <ul class="list-unstyled mt-3">
                                         <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
                                         <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">22nd March, 2023</span> </li>
@@ -121,6 +122,9 @@
 
                             <div class="content p-4">
                                 <p class="text-blog">In this example we’re going to do something very exciting. We're going to model a purchase flow where the customer purchases a product, makes a payment and is shown a Thank you page.</p>
+                                <p class="text-blog">It will look like this:</p>
+                                <img src="images/FinishFlow.png" class="blog_image"></img>
+                                
                                 <p class="text-blog"><b>These are the steps of this flow:</b></p>
                                 <ol class="text-blog">
                                     <li>The State Machine calls a Lambda Function with 2 variables: product name and product price</li>
@@ -153,7 +157,7 @@
                                 <img src="images/StateMachine_1.png" class="blog_image"></img>
 
                                 <p class="text-blog">Scroll down and in the <b>Definition</b> block you see a very basic flow. It has 2 states, Hello and World. The Hello step is a Pass type, which tells the state machine to go to the next state, called World. Change the code to this:</p>
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="lang-javascript">
 {
     "StartAt": "LambdaFunction_AddToCart",
     "States": {
@@ -205,7 +209,7 @@
                                 <p class="text-blog">Open <a href="https://eu-north-1.console.aws.amazon.com/lambda/home" target="_blank">Lambda</a> and click <b>Create function</b>. Choose <b>Author from scratch</b>, provide a name (I named it <i>step-function-checkStatusFromAddToCart</i>) and select <b>Python3.9</b> as runtime environment. On the image below, AWS highlighted the Function name with red because I already created this function. Select our newly created IAM role (<b>RoleForPurchaseFlow</b>) as the role. Click <b>Create Function</b>.</p>
                                 <img src="images/LambdaFunction_1.png" class="blog_image"></img>
                                 <p class="text-blog">Now that the <b>Lambda Function</b> is created, we can modify its default code. Change it to this:</p>
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-python">
 def lambda_handler(event, context):
     print(event)
     product_name = event['product_name']
@@ -238,7 +242,7 @@ def lambda_handler(event, context):
                                 <p class="text-blog">Click <b>Test</b> and in a new tab of the <b>Code source</b> the results will be shown. All right, we received statusCode 200 and we see the all the other variables as well.</p></b>
                                 <img src="images/TestStateMachine_2.png" class="blog_image"></img>
                                 <p class="text-blog">Finally, copy the <b>ARN</b> of the Lambda Function and paste it in the <b>Resource</b> tag of the <b>Step Function's</b> code. The <b>ARN</b> identifies which <b>Lambda Function</b> this <b>Step Function</b> should invoke. Here:</p>
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-python">
     "StartAt": "LambdaFunction_AddToCart",
     "States": {
         "LambdaFunction_AddToCart": {
@@ -257,7 +261,7 @@ def lambda_handler(event, context):
                                 
                                 
                                 <p class="text-blog">Now let’s add another step to our code. Once we added the product to the cart, we need to make a payment. Change your code to this:</p>
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-javascript">
 {
   "StartAt": "LambdaFunction_AddToCart",
   "States": {
@@ -328,7 +332,7 @@ def lambda_handler(event, context):
                                 <p class="text-blog">If we receive a statusCode=200 from the <b>Lambda Function</b> that verifies that we the product has a name and a price, we move onto the next step, called <b>LambdaFunction_MakePayment</b>. This step will invoke another <b>Lambda function</b> that will check if the paid amount equals the product’s price. If it does, we move onto the <b>Success_Payment</b>option. Otherwise we finish with <b>Fail_Payment</b>.</p>
                                 <p class="text-blog">Let’s create the second <b>Lambda Function</b> and call it <i>step-function-checkStatusFromPayment</i>. Assign the same role to this function that you assigned to the first one and change the default code to this:</p>
 
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-python">
 def lambda_handler(event, context):
     print(event)
     product_price = int(event['product_price'])
@@ -376,7 +380,7 @@ def lambda_handler(event, context):
                                 <p class="text-blog">If you run execute the state machine now, it will run into an error:</p>
                                 <img src="images/ResultPathError_1.png" class="blog_image"></img>
                                 <p class="text-blog">Using <b>ResultPath</b> only is not enough. We need to store the variables in an <b>InputPath</b> as well. But where should we add it? Well, we can't add it to the first task, because that is where our flow starts, so there is no value we could store in <b>InputPath</b>. Because we receive the return value at the end of <b>LambdaFunction_AddToCart</b>, we can add <b>"InputPath": "$.purchase"</b> to the subsequent Choice step. I named this $.purchase but you can name it anyway you want.</p>
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-javascript">
 {
   "StartAt": "LambdaFunction_AddToCart",
   "States": {
@@ -450,7 +454,7 @@ def lambda_handler(event, context):
                                 <p class="text-blog">All right, so we were able to forward the <b>product id</b> parameter to the next step. If you click through the steps in the <b>Graph view</b>, you'll see that we still have this variable in the <b>LambdaFunction_MakePayment</b> step, but it's missing afterwards. Let's try this out by creating and invoking the third, and last <b>Lambda Function</b>.</p>
                                 
                                 <p class="text-blog">Let's create the third <b>Lambda Function</b>. Here we are expecting 2 parameters, <b>product_name</b> and <b>product_id</b>. If we receive both, we'll say Thank you and send back a statusCode that the state machine will use to decide to end the flow with <b>Success_Payment</b> or <b>Fail_Payment</b>.</p>
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-python">
 def lambda_handler(event, context):
     print(event)
     product_name = event['product_name']
@@ -476,7 +480,7 @@ def lambda_handler(event, context):
                                 
                                 <p class="text-blog">Let's modify our state machine by adding a new step to invoke the newly created <b>Lambda Function</b>. Don't forget to add the <b>ARN</b> of that function to the <b>resource</b> tag of the step.</p>
 
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-javascript">
 {
   "StartAt": "LambdaFunction_AddToCart",
   "States": {
@@ -562,7 +566,7 @@ def lambda_handler(event, context):
 
                                 <p class="text-blog">We can quickly resolve this by adding the third <b>Lambda Function</b> to the IAM role's policy of the <b>State Machine</b>. You have the option to enable the <b>State Machine</b> to invoke all Lambda Functions as well, but that goes against the least privilege rule of AWS. I show you how to do this, but I don't suggest it:</p>
 
-                                <pre style="font-size:10px;"><code class="lang-json">
+                                <pre style="font-size:10px;"><code class="language-javascript">
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -583,7 +587,8 @@ def lambda_handler(event, context):
                                 <p class="text-blog">Our code runs flawlessly and we even receive the <b>product id</b> back from the <b>LambdaFunction_ThankYou</b> in <b>Success_Payment</b> step!</p>
                                 <p class="text-blog">One last note: I said we don't need to add <b>"InputPath": "$.purchase"</b> to the second Choice step, because it's already defined. Imagine that you generate a different <b>product id</b> in the <b>LambdaFunction_MakePayment</b> step. If you'd like to update and display the new value of <b>$.productID</b> on the Thank you page, you need to add <b>InputPath</b> to the Choice step afterwards.</p>
 
-                     
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
                             </div>
                         </div>
                     </div>
