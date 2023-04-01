@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Send an SMS and Email alert with SNS and save it to CloudWatch" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>Send an SMS and Email alert with SNS and save it to CloudWatch</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">1st April, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">In this tutorial I will show you how to send an SMS and Email notification with Amazon Simple Notification Service and save it to CloudWatch. I will use a Lambda function to trigger the SNS service, and this Lambda function will play the role of a service checking if a disk storage goes above a threshold.</p>
+                                
+                                
+                                <p class="text-blog"><b>These are the steps of this flow:</b></p>
+                                <ol class="text-blog">
+                                    <li>The Lambda function checks if the disk storage is above 80%. If it is, it will trigger the SNS</li>
+                                    <li>The SNS will send an SMS and an Email to a designated phone number and email address</li>
+                                    <li>The message will be saved to CloudWatch</li>
+                                 </ol>
+
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create an SNS topic</li>
+                                    <li>Create an SNS subscription</li>
+                                    <li>Send a test message</li>
+                                    <li>Create a Lambda function to call the SNS service</li>
+                                    <li>Create a Lambda function to save the message to CloudWatch</li>
+                                    <li>Use a subscriptions filter policy to only receive the SMS when the message is urgent</li>
+                                </ol>
+                                    
+                                <p class="text-blog">Before we do anything, let me explain how SNS works.</p>
+                                <p class="text-blog">Amazon Simple Notification Service (SNS) sends notifications two ways, A2A and A2P. A2A stands for Application to Applications and means to send messages between systems, microservices and event-driven serverless applications using AWS Lambda, SQS, HTTPS and Kinesis Data Firehose. A2P stands for Application to Person and lets you send messages to your customers or employees with SMS texts, push notifications, and email.</p>
+                                <p class="text-blog">To send messages to a group of recipients, they need subscribe to a topic first and you will send the messages to this topic.</p>
+                                <p class="text-blog">Why publish messages to a topic rather than sending it directly to destinations, like servers or people? In many cases the same message is used by different applications or servers. Furthermore, you can subscribe a group of people to a certain topic instead of sending the messages to these people 1 by 1. Makes sense, right?</p>
+                                 
+                                <p class="text-blog"><b>If it still doesn't, here are a few common SNS scenarios:</b></p>
+                                <ul class="text-blog">
+                                    <li>Develop an application that publishes a message to an SNS topic every time an order is placed for a product. Then recipients that are subscribed to this topic receive the same identical information. E.g. an AWS Lambda function can save the information in DynamoDB. An SQS queue can invoke the display of a thank you page. And so on.</li>
+                                    <li>You subscribe a certain group of customers to a topic. Every time you start a promotion on your website that targets this group of customers, you publish a message to this SNS topic that sends an email to these people.</li>
+                                    <li>You are a card dealer. Whenever a prospect asks for a proposal for a car and you create the proposal, an API calls Amazon SNS that sends the proposal to the customer, adds the information to ERP and CRM systems.</li>
+                                </ul>
+
+                                <p class="text-blog">All messages sent to SNS are processed and delivered immediately. If a message cannot be successfully delivered on the first attempt, Amazon tries to deliver it 3 more times.</p>
+                                <p class="text-blog">You pay based on the number of messages you publish, the number of notifications you deliver, and any additional API calls for managing topics and subscriptions. Delivery pricing varies by endpoint type. In this tutorial I sent about 10 SMS and email notifications and it cost me $§0.54.</p>
+                               
+
+                                <h5>1. Create an SNS topic</h5>
+                                <p class="text-blog">Open <a href="https://eu-north-1.console.aws.amazon.com/sns/v3/home" target="_blank">Amazon SNS console</a>. Click <b>Topics</b> on the left pane and then click <b>Create topic</b>. Select <i>Standard</i> for <b>Type</b> and add a name (I named it <i>DiskStorageAlert</i>. Make sure to provide a useful Topic name as it can't be changed later. Keep everything as it is and click <b>Create topic</b>.</p>
+                                <img src="images/SNS-create-topic.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">We will next create a subscription to subscribe to this topic and later we'll call this topic from a Lambda function.</p>
+                            
+                                <br/>
+                                <h5>2. Create an SNS subscription</h5>
+                                <p class="text-blog">In the <b>SNS console</b> click <b>Subscriptions</b> on the left pane and click <b>Create subscription</b>. Select your Topic from the list and select a <b>Protocol</b>. Let's use <b>SMS</b> first. Provide your phone number as the <b>Endpoint</b>. Your phone number needs to verified before Amazon can send SMS messages to it. Click <b>Add phone number</b>.</p>
+                                <p class="text-blog">Finally, click <b>Create subscription</b>.</p>
+                               
+                                <img src="images/SNS-create-subscription.png" class="blog_image"></img>
+                                <p class="text-blog">All right, now let's send a test message to see if it works.</p>
+                               
+                                <br/>
+                                <h5>3. Send a test message</h5>
+                                <p class="text-blog">Go to <b>Topics</b>, select your topic and click <b>Publish message</b>.</p>
+                                <p class="text-blog">For <b>Message structure</b> select <b>Identical payload for all delivery protocols</b>, because we have only one subscription for now. Type some short message in the <b>Message body</b> box. Click <b>Publish message</b>.</p>
+                                <p class="text-blog">You should receive an SMS in a few seconds.</p>
+
+                                <p class="text-blog">Let's create another subscription for getting emails.</p>
+                                <p class="text-blog">This time select <b>Email</b> as <b>Protocol</b> and add your email as the <b>endpoint</b>. Every time you add an email address as a recipient to a subscription, you need to verify it. Look for an email from Amazon in your mailbox and click the link. Now refresh the page and you should see both your subscriptions with a <b>Confirmed</b> status:</p>
+                                <img src="images/SNS-email-sms.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">Let's send another test message. Select your topic and click <b>Publish message</b>.</p>
+                                <p class="text-blog">Now that we're going to send an email as well, let's type something as <b>Subject</b>. For <b>Message structure</b>, this time I will select <b>Custom payload for each delivery protocol</b> to be able to send a different message via SMS and Email. SMS messages should be short, while Email messages can include a lot more information. Change the content of the email and sms tags and leave the rest as they are. Since we don't have any more subscriptions, SNS will ignore those other endpoints.</p>
+                                <img src="images/SNS-email-sms-test.png" class="blog_image"></img>
+                                <p class="text-blog">Click <b>Publish message</b>. You should receive both an SMS and an email with different texting.</p>
+                               
+                                
+                                <br/>
+                                <h5>4. Create a Lambda function to call the SNS service</h5>
+                                
+                                <p class="text-blog">Allright, all this make sense only if we set up a trigger for the message.</p>
+                                <p class="text-blog">Open <a href="https://eu-north-1.console.aws.amazon.com/lambda/home" target="_blank">AWS Lambda</a>. Click <b>Functions</b> on the left pane and then click <b>Create function</b>. Select <b>Author from scratch</b> on the top and provide a <b>Function name</b> (I named it <i>thresholdReached</i>. Select <b>Node.js 16.x</b> as runtime environment and click <b>Create function</b>.</p>
+                                <p class="text-blog">I reason I chose Node.js 16.x is because with version 18.x I always run into the <i>Runtime.ImportModuleError: Error: Cannot find module ‘aws-sdk</i> error. Oh, and we need an .mjs file, so if your file's extension is a .js, rename it in the file explorer on the left.</p>
+                                <p class="text-blog">Provide you topic's ARN for <b>TopicARN</b> so the Lambda Function knows which topic to call.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+console.log("Loading function");
+var AWS = require("aws-sdk");
+export const handler = function(event, context) {
+    //var eventText = JSON.stringify(event, null, 2);
+    //console.log("Received event:", eventText);
+    
+    var disk_size = 81;  //let's suppose we receive this information from a system
+    if (disk_size >= 80) {
+        var sns = new AWS.SNS();
+        var params = {
+            Message: "The SSD_1 disk space exceeded your specified alert threshold (80%).", 
+            Subject: "Disk alert",
+            TopicArn: "arn:aws:sns:eu-north-1:413975335361:DiskStorageAlert"
+        };
+        sns.publish(params, context.done);
+    }
+};
+                                </code></pre>
+                                <p class="text-blog">And finally, assign the IAM role of the Lambda function the permission to be able to invoke the SNS. To do this, select the <b>Configuration</b> tab, then <b>Permissions</b> on the left pane. Click on the <b>Role name</b>.</p>
+                                <img src="images/Lambda-role-name.png" class="blog_image"></img>
+                                <p class="text-blog">You are now taken to the <b>IAM console</b>. The role has now only one permission (LambdaBasicExecutionRole). We can do 2 things here. The easier thing to do is click <b>Add permissions</b>, select <b>Attach policies</b> and select <b>AmazonSNSFullAccess</b> from the list. Though this is not the most secure solution because it enables your Lambda function do everything with all your SNS topics. So let's go the other way and select <b>Create inline policy</b> after clicking <b>Add permission</b>. Just select JSON and type the following:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "sns:Publish",
+                "sns:Subscribe"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:sns:eu-north-1:413975335361:DiskStorageAlert"
+        }
+    ]
+}
+</code></pre>
+                                <p class="text-blog">This provides your Lambda function access only to one of your Topics and restrict the access to publishing and subscribing to topics. Click <b>Review policy</b>, provide a name and click <b>Create policy</b>.</p>
+                                <p class="text-blog">Go back to your Lambda function and click <b>Deploy</b>. Let's run the function by clicking <b>Test</b>.</p> 
+                                <p class="text-blog">Provide a test name and change the JSON to this:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+{
+  "Message": "test message",
+  "Subject": "test subject"
+}
+                                </code></pre>
+                                <p class="text-blog">Click <b>Save</b> and click <b>Test</b>. If you did everything as I wrote, you should receive an SMS and an email. This is how the email I received looks like:</p>
+                                <img src="images/SNS-successful-Lambda.png" class="blog_image"></img>
+
+                                
+                                <br/><br/>
+                                <h5>5. Create a Lambda function to save the message to CloudWatch</h5>
+                                <p class="text-blog">What kind of IT professionals would we be, if we didn’t add the messages to CloudWatch?</p>
+                                <p class="text-blog">The endpoint of an SNS can not only be an SMS or an Email, but a Lambda function as well. So let's create another Lambda function to log the messages and then subscribe with this Lambda function to our topic.</p>
+                                
+                                
+                                
+                                <p class="text-blog">Again, in <b>AWS Lambda console</b> select <b>Author from scratch</b>. Provide a name, such as <i>logSNSNotifications</i> and select <b>Node.js 18.x</b> as Runtime version. Click <b>Create function</b>.</p>
+                                <p class="text-blog">Once the function is created, add this code:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+export const handler = function(event) {
+    var eventText = JSON.stringify(event, null, 2);
+    console.log("Sent message:", eventText);
+};
+                                </code></pre>
+                                <p class="text-blog">Now switch to <b>SNS console</b> and subscribe with this Lambda function to our topic. Select <b>AWS Lambda</b> as <b>Protocol</b> and add your newly created Lambda function's ARN as <b>Endpoint</b>. Click <b>Create subscription</b>.</p>
+                                <img src="images/SNS-email-sms-lambda.png" class="blog_image"></img>
+
+                                <p class="text-blog">It was that easy. <b>console.log()</b> writes whatever message you want to Cloudwatch logs.</p>
+                                <p class="text-blog">Now that we put everything together, let's run our original Lambda function again.</p>
+                                <p class="text-blog">After you received the SMS and the email, open <a href="https://eu-north-1.console.aws.amazon.com/cloudwatch/home" target="_blank">CloudWatch</a>. On the left pane, select <b>Logs</b> then <b>Log insights</b>. Select the timeframe to 30m and select our 2 Lambda functions as log groups. Click <b>Run query</b>.</p>
+                                <img src="images/Cloudwatch-groups.png" class="blog_image"></img>
+                                <p class="text-blog">In the <b>@log</b> column you see which record belongs to which Lambda function. Look for a <i>logSNSNotification</i> record in that column and select the one where the <b>@message</b> column shows a timestamp. The ones with START, END and REPORT contain some AWS technical details like the request ID, the version of the Lambda function, and resource usage of the execution. Whenever you write something to the log, the <b>@message</b> column includes only the timestamp.</p>
+                                <img src="images/Cloudwatch-log.png" class="blog_image"></img>
+                                <p class="text-blog">In case you have another disk with a different threshold, either create a different Lambda function for that with a separate message like <i>The SSD_2 disk space exceeded your specified alert threshold (95%)</i> or just call this Lambda function with disk specific parameters.</p>
+
+                                <br/>
+                                <h5>6. Use a subscriptions filter policy to only receive the SMS when the message is urgent</h5>
+
+                                <p class="text-blog">I want to show you something interesting. Since your phone is in your hand, probably you'll see the SMS once it arrives, but you only see the email when you pop up your email client (especially that these emails usually land in the Promotions and Updates tab of my Gmail). What if some messages are more important than other? We can save time and money by sending messages to a user's phone only if the message is urgent and send an email only if it is not. Or better yet, imagine that a group of customers are subscribed to a topic and you want to send similar messages to them based on the package they are subscribed to. So if they are subscribed to a gold package, offer them a higher discount than those who are subscribed to the Silver package. Or differentiate customers coming from the EU and outside the EU.</p>
+                                <p class="text-blog">This is why Amazon offers a filter-policy so that we can subscribe to a topic based on a certain set of data.</p>
+                                <p class="text-blog">In the <b>SNS console</b> edit the subscription that sends an SMS to your phone. Turn on <b>Subscription filter policy</b> and type this in the JSON editor:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+ {
+  "type": [
+    "urgent"
+  ]
+}                 
+                                </code></pre>
+                                <p class="text-blog">Add a filter policy to the email subscription as well, but this time add this:</p>                                  
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+{
+  "type": [
+    "not urgent"
+  ]
+}
+                                </code></pre>                    
+                                <p class="text-blog">Go back to your <b>Lambda function</b> and add a <b>MessageAttributes</b> parameter to the params block:</p>           
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+var params = {
+    Message: "The SSD_1 disk space exceeded your specified alert threshold (80%).", 
+    Subject: "Disk alert",
+    TopicArn: "arn:aws:sns:eu-north-1:413975335361:DiskStorageAlert",
+    MessageAttributes: {
+        type: {
+            DataType: 'String',
+            StringValue: 'not urgent'
+        }
+    }
+};             
+                                 </code></pre>
+                                                                   
+                                <p class="text-blog">If you execute this function now, you will only receive the email.</p>
+                             
+                                <br/>
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>
