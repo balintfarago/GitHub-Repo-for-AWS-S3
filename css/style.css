@@ -1319,6 +1319,7 @@ p {
   text-transform: uppercase;
   transition: all 0.2s;
   font-family: "Montserrat", sans-serif;
+  outline:none; /*BALINT*/
 }
 
 .navbar-custom .navbar-nav .nav-item .nav-link:hover, .navbar-custom .navbar-nav .nav-item .nav-link.active, .navbar-custom .navbar-nav .nav-item .nav-link:active {
@@ -1473,8 +1474,9 @@ p {
     background-color: #ffffff !important;
     padding: 10px 0px !important;
   }
-  .navbar-custom .navbar-nav .nav-item .nav-link {
+  .navbar-custom .navbar-nav .nav-item .nav-link {  
     color: #161c2d !important;
+    outline:none; /*BALINT*/
   }
   .navbar-custom .navbar-nav .nav-item .dropdown-toggle:after {
     float: right;

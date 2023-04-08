@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="DynamoDB example" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="https://balintfarago.com">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item" href="../DynamoDB intro/Everything-you-need-to-know-about-DynamoDB.html">Everything you need to know about DynamoDB</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>DynamoDB example</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">8th April, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability.</p>
+                                <p class="text-blog">In this tutorial I will explain how DynamoDB works. This is kind of an in-depth tutorial because DynamoDB is not like the traditional relational databases and it requires a different thinking.</p>
+                                
+                                <br/>
+                                <h5>1. Introduction to DynamoDB</h5>
+
+                                <p class="text-blog">Before you start designing your schema for DynamoDB, come up with the questions it will need to answer first. Understanding the business problems and the application use cases up front is essential.</p>
+                                
+                                <p class="text-blog">There are 4 terms that are key to understanding DynamoDB:</p>
+                                <ul class="text-blog">
+                                    <li>Tables</li>
+                                    <li>Items</li>
+                                    <li>Attributes</li>
+                                    <li>Primary key</li>
+                                </ul>
+
+                                <p class="text-blog">DynamoDB stores data in <b>tables</b>, which sounds like <b>tables</b> in relational databases, but they're different. <b>Tables</b> contain <b>items</b> that may have completely different <b>attributes</b> from one another. For example we can store car data in a car table, but we can also store manufacturer data in the same table. You should maintain as few <b>tables</b> as possible in a DynamoDB application. As a matter of fact, one <b>table</b> should be enough.</p>
+
+                                <img src="images/DynamoDB-simple-table-partition-key.png" class="blog_image"></img>
+
+
+
+                                <p class="text-blog">An <b>item</b> is a group of <b>attributes</b> that is uniquely identifiable among all of the other <b>items</b>. In the example above, an <b>item</b> is a record. Different <b>items</b> can have different <b>attributes</b>. Every <b>item</b> in your <b>table</b> must include the <b>primary key</b> and that <b>primary key</b> must uniquely identify each <b>item</b> in that <b>table</b>. So you can't have 2 <b>items</b> with the same <b>primary key</b>.</p>
+                                <p class="text-blog"><b>Attributes</b> are bits of data, sort of like columns in a relational database (Firstname, Lastname etc.). Here in DynamoDB you don't need to define these upfront, because DynamoDB is schemaless. Schemaless doesn't mean that your database doesn't have a schema, it just means that it's not enforced at the database level. When you create your <b>table</b>, you only need to provide a name for it and create the <b>primary key</b>. <b>Attributes</b> are added at <b>item</b> creation.</p>
+                                <p class="text-blog"><b>Attributes</b> can be a string, a number, a boolean, a list, a map etc.</p>
+
+                                <p class="text-blog">The example <b>table</b> above had a single <b>primary key</b>. There is another type of <b>primary key</b>, which is called a <b>composite primary key</b>. Every <b>item</b> in your <b>table</b> is stored in a <b>partition</b>. Which <b>partition</b> an <b>item</b> is stored in is determined by the <b>partition key</b>, so DynamoDB doesn't need to query the whole <b>table</b> in order to find a specific record, because the <b>partition key</b> tells it in which <b>partition</b> it should be looking for a specific <b>item</b>. This makes DynamoDB very effective at querying the <b>table</b>. The <b>primary key</b> is either a <b>single partition key</b> or a combination of a <b>partition key</b> and a <b>sort key</b>:</p>
+                                <ul class="text-blog">
+                                    <li><b>Partition key</b> - A simple <b>primary key</b>, composed of one <b>attribute</b> known as the <b>partition key</b> (<i>username</i>). If the <b>table</b> has only a <b>partition key</b>, then no two <b>items</b> can have the same <b>partition key</b> value. In our example, there can be no other <b>item</b> with the username <i>bfarago</i>.</li>
+                                    <li><b>Partition key and sort key</b> - In this case the <b>primary key</b> is a composition of 2 keys. The <b>partition key</b> is a <i>hash attribute</i> and the <b>sort key</b> is a <i>range attribute</i>. The term <i>hash attribute</i> derives from the use of an internal hash function in DynamoDB. The term <i>range attribute</i> derives from the way DynamoDB stores <b>items</b> with the same <b>partition key</b> physically close together, in sorted order by the <b>sort key</b> value. The composition of 2 <b>partition keys</b> provides flexibility  when querying data.</li>
+                                </uL>
+                                <p class="text-blog">When you're working with DynamoDB, you will use the <b>primary key</b> - either simple or composite - to query the <b>table</b>. You can't really use the <b>attributes</b> with DynamoDB, unlike you would do that with a traditional relational database.</p>
+                                <p class="text-blog">As long as all these people are working at the same company, it's normal to have the username to be unique. But what if we would like to store employees of several companies in a <b>table</b>? This is where the <b>composite primary key</b> helps:</p>
+
+                                <img src="images/DynamoDB-simple-table-composite-primary-key.png" class="blog_image"></img>
+
+                                <p class="text-blog">Here the company is the <b>partition key</b> and the username is the <b>sort key</b>. Now we could add another record with username <i>bfarago</i> if we assign <i>Warner Bros</i> as the company to him. Of course, there cannot be 2 employees with the username <i>bfarago</i> working for the same company.</p>
+                                
+                                <p class="text-blog">When using a <b>composite primary key</b> generic names for the <b>partition key</b> (PK) and <b>sort key</b> (SK) <b>attribute</b> is recommended. When modelling data in DynamoDB we often try to put as many different entities into a single table as possible. Since these entities are identified by different underlying attributes, it's less confusing to have generic <b>attribute</b> names. E.g. in our <b>table</b> we can store not only employees, but company data, types of elephants or really anything. In case of companies, the <b>partition key</b> may be the company name and the <b>sort key</b> may be the type of company. It wouldn't make sense to refer to those data as company and username, right?</p>
+                                
+                                <img src="images/DynamoDB-simple-table-composite-primary-key-mixed-items.png" class="blog_image"></img>
+
+                                <p class="text-blog">This table now stores 2 different types of <b>items</b>. Because some of the existing <b>attributes</b> do not make sense for companies, I left those empty and added a <i>Founded</i> <b>attribute</b>. In this case, naming PK as <b>primary key</b> and SK as <b>sort key</b> would be the recommended way to go.</p>
+                                <p class="text-blog">Having 2 different types of items in the same table is similar to a JOIN operation in relational databases. In DynamoDB there is no JOIN operation.</p>
+
+                                <br/>
+                                <h5>2. Using hashtags in item names</h5>
+
+                                <p class="text-blog">In the example below I named the <b>partition key</b> <i>PK</i> and the <b>sort key</b> <i>SK</i>.</p>
+                                <img src="images/DynamoDB-simple-table-composite-primary-key-mixed-items-hashtag.png" class="blog_image"></img>
+                                <p class="text-blog">If you store different types of <b>items</b> in a <b>table</b>, it may be hard to differentiate between those. If someone's username is <i>LLC</i>, it can either be a username and a company type at the same time. To overcome this, we can use a hashtag to mark which <b>item</b> refers to what. In the <b>table</b> below I use a prefix to mark the <b>items</b>. So <i>USER#BFARAGO</i> refers to a user while <i>ORGTYPE#CORPORATION</i> refers to a company type. Same for <i>ORG#AMAZON</i>. Even if the PK attribute includes organizations only in this example, it's a general pattern to still use a prefix.</p>
+                                <p class="text-blog">Note: though I used all caps you are welcome to use small caps as well, such as <i>ORG#Amazon</i>.</p>
+                               
+                                <br/>
+                                <h5>3. Complex attributes</h5>
+
+                                <p class="text-blog">DynamoDB can store complex attributes like maps, lists and sets.</p>
+                                <p class="text-blog">A <b>List</b> type attribute can store an ordered collection of values. Those values can be of different datatypes such as strings or numbers and elements do not have to be of the same type.</p>
+                                <p class="text-blog">A <b>Set</b> is similar to a <b>List</b>, but all elements within a set must be of the same type and they are not stored in any order. For example, an attribute of type <b>Number Set</b> can only contain numbers; <b>String Set</b> can only contain strings; and so on.</p>
+                                <p class="text-blog">Like the <b>List</b> type, the <b>Map</b> type allows you to store a collection of values in a single attribute. For a <b>Map</b> attribute, these values are stored in key-value pairs.</p>
+
+                                <img src="images/DynamoDB-complex-attributes.png" class="blog_image"></img>
+
+
+                                <br/><br/>
+                                <h5>4. Secondary indexes</h5>
+                                <p class="text-blog">A Query operation fetches one or multiple items that have the same <b>partition key</b>. Whenever you want to query a <b>table</b>, you must specify the exact <b>partition key</b> you're looking for. Since DynamoDB is not a relational database, it does not really know how many records it has in the table, or what each record is about. You can't just tell DynamoDB to give you all the employees that are older than 50, because for such queries, you should use SQL databases. Luckily there is a solution for that.</p>
+                                <p class="text-blog">A <b>secondary index</b> basically copies your data and reshapes it with a new <b>primary key</b>, so you'll virtually get a new table where the <i>Year of Birth</i> is the first column and it is the primary key. You can query based on that <b>secondary index</b>, but you cannot insert or update data in the <b>table</b> based on that.</p>
+                                <p class="text-blog">How can we search for a specific user? Users are listed as a <b>sort key</b>, which means in order to quickly retrieve a user, we'd need to know its author as well as the userid.</p>
+                                <p class="text-blog">So let's add a <b>secondary index</b> to help us answer the query. I've added the <b>attributes</b> GSI1PK as the <b>partition key</b> for the <b>global secondary index</b> and GSI1SK as the <b>sort key</b>. The index itself is just named GSI1. GSI refers to Global Secondary Index. The <b>attribute</b> names that make up the <b>index</b> are very generic again, this allows us to use the GSI for multiple query patterns. You could call these 2 colums however you want, naming them as GSI1PK and GSI1SK is a general practice, because you can easily tell if a table have <b>secondary indexes</b> just by looking at it. In this example just addig a <b>global secondary index</b> with only a <b>primary key</b> would have been sufficient, but I went with a <b>partition and sort key</b> as well and filled it with some generic data, because we might need it later. Note that I did not add a <b>secondary index value</b> to the organizational item because I'm not planning on searching for organizations.</p>
+                                <img src="images/DynamoDB-added-secondary-index.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">We also need to tell DynamoDB that these 2 new attributes are <b>secondary indexes</b>. Click <b>View table details</b>, select the <b>Indexes</b> tab and click <b>Create index</b>. Provide the names for the keys and click <b>Create index</b>. Wait until the <b>Status</b> of the index becomes Active. It usually takes a couple of minutes.</p>
+                                <img src="images/DynamoDB-create-secondary-index.png" class="blog_image"></img>
+
+                                <p class="text-blog">To query a <b>table</b> against a <b>secondary index</b>, from the table list, we need to select the <b>index</b> instead of the <b>table</b>, because the <b>secondary index</b> reorganized the original table into a new one. So now we have the same data in 2 tables and can search for both organizations and users as well.</p>
+                               
+                                <img src="images/DynamoDB-query-secondary-index.png" class="blog_image"></img>
+
+                                <p class="text-blog">Now if you'd like to add a new item to the original table, it will automatically be added to the indexed table as well, if you specify the GSI1PK and GSI1SK attributes.</p>
+
+
+                                <p class="text-blog">What if we would like to store an additional type of data in our <b>table</b>? Companies usually have a ticketing system for requesting softwares and permissions. In this case we could change our SK access pattern to <i>USER#BFARAGO#TICKET#3427375</i>, so we would have organizational, user and ticket <b>items</b> linked on an organization. Though this makes sense on paper, but in this case we would need to read more <b>items</b> to access just one, especially because there's gonna be way more tickets than users and organizations. It will work and you can easily tell DynamoDB to give you all the tickets created by a specific user, but in this case it's not the best idea.</p>
+
+                                <img src="images/DynamoDB-composite-sort-key-bad-practice.png" class="blog_image"></img>
+
+                                <p class="text-blog">Instead, let's initiate the tickets as another PK.</p>
+                                <p class="text-blog">We added some new <b>attributes</b>, GSI1PK and GSI1SK. I added these to the user <b>items</b> and to the ticket <b>items</b> as well. So now with the <b>secondary index</b> we can query the table for a list of all the tickets by a specific user. For the ticket <b>items</b> I put the same value in the PK and the SK columns, because it doesn't really make sense to add something else in the SK column, at least not in this example.</p>
+
+
+                                <img src="images/DynamoDB-composite-sort-key-good-practice.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">To get a list of all the tickets by a specific user, select the reorganized table for the <b>Query</b> operation. Put <i>ORG#AMAZON#USER#BFARAGO</i> in the <b>GSI1PK</b> field and select <b>Begins with</b> for the <b>Sort key</b> and type <i>TICKET</i>:</p>
+                              
+                                <img src="images/DynamoDB-composite-sort-key-query-GSI1PK.png" class="blog_image"></img>
+
+                                <p class="text-blog">You can't search for all tickets in a specific organization in this table. The <b>partition key</b> allows the equality operator only, which means you need tell DynamoDB which exact <b>partition key</b> you're looking for. The <b>sort key</b> allows partial matching with additional operators, such as <i>contains</i>, <i>begins_with</i>, <i>between</i> and a few more.</p>
+
+                                <br/>
+                                <h5>5. Composite sort key</h5>
+                                <p class="text-blog">When you are working with hierarchies,  the <b>composite sort key</b> can come very handy. Let's suppose you're a big pharmaceutical company  present in lots of countries and you perform different kinds of operations or research in those countries, and in many cases in different cities. If you combine then multiple information, such as state, city, zip code and division into a <b>composite sort key</b>, you can easily tell DynamoDB to give you all the divisions in Arizona state.</p>
+                                <img src="images/DynamoDB-composite-sort-key.png" class="blog_image"></img>
+
+                               
+                                <br/><br/>
+                                <h5>6. SQL or NoSQL?</h5>
+                                
+                                <p class="text-blog">If you're used to traditional relational databases, you might ask, why would you want to use a NoSQL database? To answer this question, we need to evaluate the differences between the two.</p>
+                                <p class="text-blog">DynamoDB supports petabytes of data and seamlessly scales up or down, which makes it much faster when it comes to massive amounts of data. Being able to handle 20 million requests per second is much more than what RDS or Aurora is capable of.</p>
+                                <p class="text-blog">If you want to store predictable and structured data, you should use SQL databases.</p>
+                                <p class="text-blog">If a business needs to be ably to quickly read and write large amounts of data, it should always go with DynamoDB. For example, in 2016 Duolingo stored 31 billion items in just one table and executed 24,000 read units per seconds, without breaking a sweat. DynamoDB scales up when they have traffic peaks and scales down off-peak to save money.</p>
+                                <p class="text-blog">Let's assume you regularly want to export large amounts of data, like 1 million records. Though you can do this with DynamoDB, it's much faster to use a relational database for this type of work. This is another example of why coming up with use cases up front is so important before going with a database.</p>
+                                <p class="text-blog">If you're a startup, you don't know how fast you'll find customers and how much data you'll get in a certain period of time. You also don’t know if your idea will succeed. In this case paying for a reserved storage of an SQL database might be an overkill. Furthermore, in case of an explosive growth, a relational database may not be able to serve your needs thus impacting growth and then requiring a painful migration to a NoSQL database, which will ultimately impact the speed of delivering new features.</p>
+                                <p class="text-blog">Though it is a slight difference, if you're building a mission critical application where any outage costs you serious money, DynamoDB offers 99.999% uptime (27 seconds downtime per month) versus 99.99% uptime (4.5 minutes) of Aurora.</p>
+                                <p class="text-blog">Another thing I'd like to mention is the cost of usage. Storing 1TB of data in DynamoDB costs $269/month, while storing the same amount in Aurora costs $110/month. DynamoDB costs $1.34 per 1 million write requests and $0.27 per 1 million read requests, while Aurora costs only $0.21 per million write or read requests. Storing 1TB of data in RDS costs at least $120 per month and Amazon charges $0.11 per 1 million read or write requests. Just by the look of that DynamoDB is much more expensive than the SQL databases. On the other hand, you need to think about what and how much data you are going to store in the database and what access patterns you're going to use for reading and writing data. If that matters, it's simpler to manage DynamoDB and it doesn't require maintenance.</p>
+                         
+
+                                
+                                <br/>
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>
