@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="DynamoDB example" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="https://balintfarago.com">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item" href="../DynamoDB intro/Everything-you-need-to-know-about-DynamoDB.html">Everything you need to know about DynamoDB</a>
+                                            <a class="dropdown-item" href="../Build a simple webapp/Build-webapp-fronted-backend-lambda-dynamodb.html">Build a simple webapp that writes form data into DynamoDB</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>Build a simple webapp that writes form data into DynamoDB</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">8th April, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">In this tutorial we're going to create a simple form on a dummy website and send the data to our backend Lambda function that puts it into DynamoDB.</p>
+                                <br/>
+                            
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create a DynamoDB table</li>
+                                    <li>Create a Lambda function</li>
+                                    <li>Create an API</li>
+                                    <li>Create the HTML code</li>
+                                    <li>Add more fields to the form</li>
+                                </ol>
+
+                                <br/>
+                                <h5>1. Create a DynamoDB table</h5>
+
+                                <p class="text-blog">Open the <a href="https://eu-north-1.console.aws.amazon.com/dynamodbv2/home" target="_blank">DynamoDB console</a> and click <b>Create table</b>.</p>
+                                <p class="text-blog">Name your table <i>Messages</i>. I'm going to use <i>Name</i> as the <b>Partition key</b> and <i>Date</i> as the <b>Sort key</b> to enable multiple messages from the same person. Select <b>Customize settings</b> for <b>Table settings</b> and select <b>DynamoDB Standard</b> table. For the <b>Read/Write capacity settings</b> select <b>On-demand</b>. Click <b>Create table</b>.</p>
+
+                                <img src="images/Create-DynamoDB-table.png" class="blog_image_small"></img>
+
+                                <p class="text-blog"></p>
+
+                                <h5>2. Create a Lambda function</h5>
+                                <p class="text-blog">Open the <a href="https://eu-north-1.console.aws.amazon.com/lambda/home" target="_blank">Lambda console</a> and click <b>Create function</b>.</p>                               
+                                <p class="text-blog">Provide a name for your function (I named mine <i>writeToMessagesTable</i>, select <b>Node.js 16.x</b> as <b>Runtime environment</b> and click <b>Create function</b>.</p>
+                               
+                                <img src="images/Create-Lambda-function.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">Once the function is created, select the <b>Configuration</b> tab and click the role's name. You are taken to IAM where you'll need to provide permission to your role to access DynamoDB. Click <b>Create policy</b> and use the Visual Editor to provide the read and write roles as well as the ARN of your DynamoDB table:</p>
+
+                                <img src="images/Lambda-access-DynamoDB.png" class="blog_image"></img>
+
+                                <p class="text-blog">Click <b>Review policy</b>, name the policy and click <b>Create policy</b>. I named mine <i>ReadWriteDynamoDBTableMessages</i>. Now the IAM role of the Lambda function has a default LambdaExecution role and another one created by us.</p>
+
+                                <p class="text-blog">It's time to do some coding! Add the following code to your Lambda function:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+console.log('starting function');
+
+const AWS = require('aws-sdk');
+const docClient = new AWS.DynamoDB.DocumentClient({region: 'eu-north-1'});
+
+exports.handler = function(e, ctx, callback) {
+
+	var params = {
+		Item: {
+			Name: "Balint",
+			Date: new Date().toLocaleString()
+		},
+		TableName: 'Messages'
+	};
+
+	docClient.put(params, function(err, data) {
+		if(err){
+			callback(err, null);
+		}else{
+			callback(null, data);
+		}
+	});
+
+}
+                                </code></pre>
+
+
+
+                                <p class="text-blog">Click <b>Deploy</b>. To send a test event, click <b>Test</b> and configure the test event with the 2 test data (<i>Name</i> and <i>Date</i>). Click <b>Test</b> again to send the event. Since the data is hardcoded in the code, the test data provided in the test event is ignored. Lambda will send the hardcoded values to DynamoDB.</p>
+
+                                <p class="text-blog">Let's check DynamoDB:</p>
+
+                                <img src="images/Lambda-wrote-into-DynamoDB.png" class="blog_image"></img>
+
+                                <p class="text-blog">The record should be created. All right, now we have a Lambda function that connects to and writes into a DynamoDB database. It's time to create the frontend of the application and call this Lambda function from the browser.</p>
+
+                                <h5>3. Create an API</h5>
+
+                                <p class="text-blog">Open the <a href="https://eu-north-1.console.aws.amazon.com/apigateway/main/apis" target="_blank">API Gateway console</a>. Click <b>Create API</b> and from the options select <b>REST API</b>.</p>
+                                <p class="text-blog">Provide a name for your API (I named mine <i>customer_message</i>) and click <b>Create API</b>.</p>
+                                <p class="text-blog">From the <b>Actions</b> list select <b>Create Resource</b>. Provide a name (I named mine <i>messages</i>) and click <b>Create Resource</b>.</p>
+                                <img src="images/API-gateway-create-resource.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">Since we only want to send information to AWS, we will only use a <b>POST</b> method. From the <b>Actions</b> list select <b>Create Method</b>. Select <b>Lambda function</b> as <b>Integration type</b>, select your region and provide the <b>Lambda function</b> you're going to use for adding records to your database. Click <b>Save</b>.</p>
+                                
+                                <img src="images/Create-POST-API-Gateway.png" class="blog_image"></img>
+
+                                <p class="text-blog">Let's go to <b>Integration Request</b>, and in <b>Mapping Templates</b> add a new one and type “application/json”. Now tell the gateway to pass along a message by adding this to the textbox:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+{
+    "Name": $input.json('$.Name')
+}
+                                </code></pre>
+
+                                <img src="images/API-Gateway-Mapping-templates.png" class="blog_image"></img>
+
+                                <p class="text-blog">Now in the resource list select the <i>/messages</i> item, and from the <b>Actions</b> list select <b>Enable CORS</b>. This enables your front-end code to call this API. For simplicity, keep everything as it is and click <b>Enable CORS and replace existing CORS headers</b>. Note that by providing a wildcard in the <b>Access-Control-Allow-Origin*</b> allows this API to be called from any domain, which something you should normally not do. You'll probably create your .html file first on your computer, so you can leave it as that. </p>
+                            
+                                
+                                <img src="images/API-Gateway-Enable-CORS.png" class="blog_image"></img>
+
+                                
+                                <p class="text-blog">Now go to the root resource marked by a '/' and from the <b>Actions</b> list select <b>Deploy API</b>. Select <b>[New Stage]</b> for the <b>Deployment Stage</b>, provide a <b>Stage Name</b> like <i>prod</i> and click <b>Deploy</b>.</p>
+                                <img src="images/API-Gateway-Deploy-API.png" class="blog_image_small"></img>
+                              
+                              
+                                <p class="text-blog">Now we have an invoke URL we can add to our front-end javascript code. But before we do that, remember that in the current Lambda function we hardcoded the values we are putting into DynamoDB. So change this line:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript"></code>
+Name: "Balint",
+                                </code></pre>
+                                <p class="text-blog">to this:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+Name: e.Name,
+                                </code></pre>
+                                <p class="text-blog">This is going to fetch the name the API Gateway gives to our Lambda function. If you forget where your Invoke URL is, just select the <b>Stages</b> on the left pane in API Gateway console, click <b>prod</b> then click <b>messages</b>.</p>
+
+
+                                <h5>4. Create the HTML code</h5>
+                                
+                                <p class="text-blog">Finally we can create the front-end of our application. For starters, let's create an input element, a button and a small jquery code with an ajax call that calls our API with the help the Invoke URL provided by the API Gateway console after we deployed the API. Note that the Invoke URL is ending with <i>messages</i>.</p>
+
+                                <pre style="font-size:10px;"><code class="language-html">
+
+&lt;!DOCTYPE html>
+    &lt;html lang="en">        
+        &lt;body>
+
+            &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">&lt;/script>
+            &lt;script type="text/javascript">
+
+            var API_URL = 'https://487c3maln9.execute-api.eu-north-1.amazonaws.com/prod/messages';
+            $(document).ready(function() {
+                $('#submitButton').click(function(e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                    type: 'POST',
+                    url: API_URL,
+                    data: JSON.stringify({"Name": $('#name').val()}),
+                    contentType: "application/json",
+
+                    success: function(data) {
+                        console.log("Success writing to DynamoDB");
+                    }
+                });
+
+                return false; //without this, the page will be refreshed before the ajax request is completed
+               
+                });
+            });
+        &lt;/script>
+
+
+            &lt;form>
+                &lt;label for="name">Message</label>
+                &lt;textarea id="name"></textarea>
+                &lt;button type="button" id="submitButton">Submit</button>
+             &lt;/form>
+
+        &lt;/body>
+&lt;/html>
+                                </code></pre>
+                               
+                                <p class="text-blog">Let's type something in the field and click <b>Submit</b>. Make sure to check that the success message is written to the console. After that let's check if the record was created in DynamoDB.</p>
+                             
+                                <img src="images/Form-with-name.png" class="blog_image_small"></img>
+                                <img src="images/DynamoDB-item-added-through-form.png" class="blog_image"></img>
+
+                                <br/><br/>
+                                <h5>5. Add more fields to the form</h5>
+
+                                <p class="text-blog">Let's add 2 more fields to the form: One for the email address and another for the message. HTML code:</p>
+
+
+                                <pre style="font-size:10px;"><code class="language-html">
+&lt;form>
+    &lt;label for="name">Name:&lt;/label>
+    &lt;input id="name">&lt;/input>&lt;br/>
+    &lt;label for="email">Email:&lt;/label>
+    &lt;input id="email">&lt;/input>&lt;br/>
+    &lt;label for="message">Message:&lt;/label>
+    &lt;textarea id="message" rows="4" cols="30">&lt;/textarea>&lt;br/>
+    &lt;button type="button" id="submitButton">Submit&lt;/button>
+&lt;/form>
+                                </code></pre>
+
+
+                                <p class="text-blog">Change the <b>data</b> block of the ajax call to this:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+ data: JSON.stringify({
+    "Name": $('#name').val(),
+    "Email": $('#email').val(),
+    "Message": $('#message').val()
+}),
+                                </code></pre>
+                                
+                                <p class="text-blog">Let's change the message template in the API Gateway and don't forget to the Deploy the API!</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+{
+"Name": $input.json('$.Name'),
+"Email": $input.json('$.Email'),
+"Message": $input.json('$.Message')
+}
+
+                                </code></pre>
+
+
+
+                                <p class="text-blog">Finally, let's add these 2 fields to our Lambda function as well then click <b>Deploy</b>:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+	var params = {
+		Item: {
+			Name: e.Name,
+			Email: e.Email,
+			Message: e.Message,
+			Date: new Date().toLocaleString()
+		},
+		TableName: 'Messages'
+	};
+                                </code></pre>
+
+
+                                <p class="text-blog">Let's see the result now:</p>
+                                <img src="images/Form-with-all-fields.png" class="blog_image_small"></img>
+                                <img src="images/DynamoDB-updated-with-several-fields.png" class="blog_image"></img>
+
+
+
+
+
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                            
+                                <br/> <br/> <br/> <br/>
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>

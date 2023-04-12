@@ -1554,6 +1554,12 @@ p {
   margin-bottom:14px;
 }
 
+.blog_image_small {
+  width:50%;
+  border:1px solid lightblue;
+  margin-bottom:14px;
+}
+
 .mouse-icon {
   position: absolute;
   left: 0;
