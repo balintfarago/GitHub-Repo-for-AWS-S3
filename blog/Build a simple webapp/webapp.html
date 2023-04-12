@@ -33,7 +33,29 @@
                 return false; //without this, the page will be refreshed before the ajax request is completed
                
                 });
+
+                $('#showMessagesButton').click(function(e) {
+                    console.log('s');
+                    //e.preventDefault();
+                    $.ajax({
+                    type: 'GET',
+                    url: API_URL,
+
+                    success: function(data) {
+                        $('#entries').html('');
+                        data.Items.array.forEach(function(messageItem) {
+                            $('#entries').append('<p>' + messageItem.Message + '</p>');
+                        })
+                    }
+                    });
+
+                return false; //without this, the page will be refreshed before the ajax request is completed
+               
+
+                });
+
             });
+
           </script>
 
           <br/><br/><br/><br/><br/><br/>
@@ -46,6 +68,11 @@
                 <textarea id="message" rows="4" cols="30"></textarea><br/>
                 <button type="button" id="submitButton">Submit</button>
             </form>
+
+            <button type="button" id="showMessagesButton">Show Messages</button>
+            <div id="entries">
+            
+            </div>
 
         </body>
 </html>

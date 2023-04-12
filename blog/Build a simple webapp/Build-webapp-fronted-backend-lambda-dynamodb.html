@@ -350,10 +350,81 @@ Name: e.Name,
                                 <img src="images/DynamoDB-updated-with-several-fields.png" class="blog_image"></img>
 
 
+                                <br/><br/>
+                                <h5>6. Read data from DynamoDB</h5>
+
+                                <p class="text-blog">Now that we built a simple webapp that writes messages to a DynamoDB table, we can go one step further and read and display all those messages on our frontend.</p>
+                                <p class="text-blog">Let's add the code for reading the data to our .html file. Put this button and div under our form:</p>
+
+                                <pre style="font-size:10px;"><code class="language-html">
+&lt;button type="button" id="showMessagesButton">Show Messages&lt;/button>
+&lt;div id="entries">
+&lt;/div>
+                                </code></pre>
+                                <p class="text-blog">Then add another button click listener to our javascript code:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+$('#showMessagesButton').click(function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'GET',
+        url: API_URL,
+
+        success: function(data) {
+            $('#entries').html('');
+            data.Items.array.forEach(function(messageItem) {
+                $('#entries').append('<p>' + messageItem.message + '</p>');
+            })
+        }
+    });
+
+    return false; //without this, the page will be refreshed before the ajax request is completed
+               
+});
+            </code></pre>
 
 
+                                <p class="text-blog">Let's create another Lambda function that reads the data from DynamoDB. I named mine <i>readFromMessagesTable</i> and I assigned the same role we used earlier, because it already has write and read access.</p>
+                                <p class="text-blog">The code is almost identical to the previous function that we wrote except that it uses a <b>scan</b> instead of a <b>put</b> and it uses a different parameter object. Note that we're using a scan option, which is very expensive in DynamoDB because scanning means that DynamoDB loops over all the items in the table. For this tutorial, with only a few records, it's fine.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+console.log('starting read function');
+
+const AWS = require('aws-sdk');
+const docClient = new AWS.DynamoDB.DocumentClient({region: 'eu-north-1'});
+
+exports.handler = function(e, ctx, callback) {
+
+console.log("Lambda function");
+	console.log(e);
+    
+    let params = {
+        TableName: 'Messages',
+        Limit: 10
+    }
+
+	docClient.scan(params, function(err, data) {
+		if(err){
+			callback(err, null);
+		}else{
+			callback(null, data);
+		}
+	});
+
+}
+                                </code></pre>
+                                <p class="text-blog">"Limit: 10" means we want to the latest messages. Before moving on, let's test it:</p>
+                                <img src="images/Lambda-reads-from-DynamoDB.png" class="blog_image"></img>
+
+
+                                <p class="text-blog">All right, it reads the 2 messages I now have in the database. Let's modify the API. Note that in the javascript code above we're using the same API we used for writing data into the database. There's no need to create a separate API. We already have a POST method for sending data to AWS resources. Now let's create a GET method for receiving data from them.</p>
+                                <p class="text-blog">From the <b>Actions</b> list select the <b>GET</b> option, select <b>Lambda function</b> as the <b>Integration type</b>, select your region and provide the name of our newly created Lambda function. Click <b>Save</b> and don't forget to Deploy!</p>
+                                <img src="images/API-Gateway-GET-method.png" class="blog_image"></img>
 
                                 <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                
+                                
+                                
+                                
                                 <p class="text-blog"></p>
                                 <p class="text-blog"></p>
                                 <p class="text-blog"></p>
