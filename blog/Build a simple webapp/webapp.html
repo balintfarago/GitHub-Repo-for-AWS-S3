@@ -35,15 +35,13 @@
                 });
 
                 $('#showMessagesButton').click(function(e) {
-                    console.log('s');
-                    //e.preventDefault();
                     $.ajax({
                     type: 'GET',
                     url: API_URL,
 
                     success: function(data) {
                         $('#entries').html('');
-                        data.Items.array.forEach(function(messageItem) {
+                        data.Items.forEach(function(messageItem) {
                             $('#entries').append('<p>' + messageItem.Message + '</p>');
                         })
                     }

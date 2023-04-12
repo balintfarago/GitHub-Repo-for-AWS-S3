@@ -117,14 +117,14 @@
                                     <h4 class="title"><br/><br/>Build a simple webapp that writes form data into DynamoDB</h4>
                                     <ul class="list-unstyled mt-3">
                                         <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
-                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">8th April, 2023</span> </li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">12 April, 2023</span> </li>
                                     </ul>
                                 </div>
                             </div>
 
 
                             <div class="content p-4">
-                                <p class="text-blog">In this tutorial we're going to create a simple form on a dummy website and send the data to our backend Lambda function that puts it into DynamoDB.</p>
+                                <p class="text-blog">In this tutorial we're going to create a simple form on a dummy website and send the data to our backend Lambda function that puts it into DynamoDB. We're going the extra mile and we'll read and display the DynamoDB records on our frontend, too.</p>
                                 <br/>
                             
                                 <p class="text-blog"><b>Table of contents:</b></p>
@@ -134,6 +134,7 @@
                                     <li>Create an API</li>
                                     <li>Create the HTML code</li>
                                     <li>Add more fields to the form</li>
+                                    <li>Read data from DynamoDB</li>
                                 </ol>
 
                                 <br/>
@@ -371,8 +372,8 @@ $('#showMessagesButton').click(function(e) {
 
         success: function(data) {
             $('#entries').html('');
-            data.Items.array.forEach(function(messageItem) {
-                $('#entries').append('<p>' + messageItem.message + '</p>');
+            data.Items.forEach(function(messageItem) {
+                $('#entries').append('<p>' + messageItem.Message + '</p>');
             })
         }
     });
@@ -382,9 +383,9 @@ $('#showMessagesButton').click(function(e) {
 });
             </code></pre>
 
-
+                                <p class="text-blog">Note that in <i>messageItem.Message</i>, the first letter of "Message" is capital. This is important, because the attribute name in the table also starts with capital M.</p>
                                 <p class="text-blog">Let's create another Lambda function that reads the data from DynamoDB. I named mine <i>readFromMessagesTable</i> and I assigned the same role we used earlier, because it already has write and read access.</p>
-                                <p class="text-blog">The code is almost identical to the previous function that we wrote except that it uses a <b>scan</b> instead of a <b>put</b> and it uses a different parameter object. Note that we're using a scan option, which is very expensive in DynamoDB because scanning means that DynamoDB loops over all the items in the table. For this tutorial, with only a few records, it's fine.</p>
+                                <p class="text-blog">The code is almost identical to the previous function that we wrote except that it uses a <b>scan</b> instead of a <b>put</b> and it uses a different parameter object. Note that we're using a scan option, which is very expensive in DynamoDB because scanning means that DynamoDB loops over all the items in the table. Though for this tutorial, with only a few records, it's fine.</p>
                                 <pre style="font-size:10px;"><code class="lang-javascript">
 console.log('starting read function');
 
@@ -393,7 +394,6 @@ const docClient = new AWS.DynamoDB.DocumentClient({region: 'eu-north-1'});
 
 exports.handler = function(e, ctx, callback) {
 
-console.log("Lambda function");
 	console.log(e);
     
     let params = {
@@ -411,28 +411,39 @@ console.log("Lambda function");
 
 }
                                 </code></pre>
-                                <p class="text-blog">"Limit: 10" means we want to the latest messages. Before moving on, let's test it:</p>
-                                <img src="images/Lambda-reads-from-DynamoDB.png" class="blog_image"></img>
+                                <p class="text-blog">"Limit: 10" means we want to the latest 10 messages. Before moving on, let's test it:</p>
+                                <img src="images/Lambda-reads-from-DynamoDB.png" class="blog_image_small"></img>
 
 
                                 <p class="text-blog">All right, it reads the 2 messages I now have in the database. Let's modify the API. Note that in the javascript code above we're using the same API we used for writing data into the database. There's no need to create a separate API. We already have a POST method for sending data to AWS resources. Now let's create a GET method for receiving data from them.</p>
                                 <p class="text-blog">From the <b>Actions</b> list select the <b>GET</b> option, select <b>Lambda function</b> as the <b>Integration type</b>, select your region and provide the name of our newly created Lambda function. Click <b>Save</b> and don't forget to Deploy!</p>
                                 <img src="images/API-Gateway-GET-method.png" class="blog_image"></img>
 
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
+                                <p class="text-blog">All right, let's test it!</p>
+                                <img src="images/Get-multiple-records-from-DynamoDB-from-frontend.png" class="blog_image_small"></img>
+
+                                <p class="text-blog">There we go. Should you want to get further attributes from DynamoDB, just use <i>messageItem.Name</i> or <i>messageItem.Email</i> in the javascript code.</p>
                                 
-                                
-                                
-                                
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
-                            
-                                <br/> <br/> <br/> <br/>
+                                <p class="text-blog">One more thing. Like I said, scanning the whole table is an expensive operation. In DynamoDB when you want to query for an item, you need to provide it's primary key. In this example I used a partition key and a sort key to create a composite primary key hence I need to use both in the code to get a specific item:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+    var params = {
+        TableName: 'Messages',
+        Key: {
+            "Name": "Tom",
+            "Date": "4/12/2023, 12:39:33 PM"
+        }
+    }
+    docClient.get(params, function(err, data) {
+		if(err){
+			callback(err, null);
+		}else{
+			callback(null, data);
+		}
+	});
+                                </code></pre>
+
+                                <br/><br/>
                                 <p class="text-blog">That's the end of this tutorial.</p>
 
                             </div>
