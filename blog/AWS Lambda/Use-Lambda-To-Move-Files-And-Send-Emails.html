@@ -124,21 +124,11 @@
 
 
                             <div class="content p-4">
-                                <p class="text-blog">Imagine there is a designated a folder in an Amazon S3 bucket where suppliers uploaded invoices. Each invoice is an .xml file and one tag in the files includes the department being invoiced. We are going to create a Lambda function that moves the files to respective department folders and send email every time an invoice is uploaded.</p>
+                                <p class="text-blog">Imagine there is a designated a folder in an Amazon S3 bucket where suppliers uploaded invoices. Each invoice is an .xml file and one tag in the files includes the department being invoiced. We are going to create a Lambda function that moves the files to respective department folders and sends an email every time an invoice is uploaded.</p>
                                 
-                                
-                                <p class="text-blog"><b>These are the steps of this flow:</b></p>
-                                <ol class="text-blog">
-                                    <li>The State Machine calls a Lambda Function with 2 variables: product name and product price</li>
-                                    <li>The Lambda Function checks if both variables have value and returns a product id</li>
-                                    <li>The State Machine calls a second Lambda Function to make a payment</li>
-                                    <li>This second Lambda Function checks if the paid amount equals the product's price and responds with a value</li>
-                                    <li>Finally, the State Machine calls a third Lambda Function to thank the customer for the purchase and displays the product ID generated in Step No.2</li>
-                                </ol>
-
                                 <p class="text-blog"><b>Table of contents:</b></p>
                                 <ol class="text-blog">
-                                    <li>Create an S3 bucket</li>
+                                    <li>Create an S3 bucket where users can upload invoices</li>
                                     <li>Create a Lambda function to move the uploaded files</li>
                                     <li>Add a trigger for our Lambda function</li>
                                     <li>Add the code to our Lambda function</li>
