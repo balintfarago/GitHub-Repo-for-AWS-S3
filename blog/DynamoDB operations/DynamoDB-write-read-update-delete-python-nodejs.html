@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="DynamoDB example" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="https://balintfarago.com">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item" href="../DynamoDB intro/Everything-you-need-to-know-about-DynamoDB.html">Everything you need to know about DynamoDB</a>
+                                            <a class="dropdown-item" href="../Build a simple webapp/Build-webapp-fronted-backend-lambda-dynamodb.html">Build a simple webapp that writes form data into DynamoDB</a>
+                                            <a class="dropdown-item" href="../DynamoDB operations/DynamoDB-write-read-update-delete-python-nodejs.html">How to write, read, update and delete items in a DynamoDB table (Python, Node.js)</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>How to write, read, update and delete items in a DynamoDB table (Python, Node.js)</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">17 April, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">In this tutorial I'm going to show you most of the write, read, update and delete operations you can do with a DynamoDB table using Node.js and Python.</p>
+                                <br/>
+                            
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create a simple DynamoDB table</li>
+                                    <li>Add a new item to DynamoDB</li>
+                                    <li>Read data from DynamoDB</li>
+                                     <ul class="text-blog">
+                                        <li>3.1 Get a specific record (all and only specific attributes)</li>
+                                        <li>3.2 Get all unpaid invoices from the IT department</li>
+                                        <li>3.3 Get a list of all invoices from the Sales department that were issued in 2023</li>
+                                        <li>3.4 Use variables in the condition</li>
+                                    </ul>
+                                    </li>
+                                    <li>Update an item</li>
+                                    <li>Delete an item</li>
+                                </ol>
+
+                                <br/>
+                                <h5>1. Create a simple DynamoDB table</h5>
+                                <p class="text-blog">Let's first create a table in DynamoDB. Open the <a href="https://eu-north-1.console.aws.amazon.com/dynamodbv2/home" target="_blank">DynamoDB console</a> and click <b>Create table</b>.</p>
+                                <p class="text-blog">Name your table <i>Invoices</i>. I'm going to use <i>PK</i> as the <b>Partition key</b> and <i>SK</i> as the <b>Sort key</b> to enable multiple invoices issued to the same department. Select <b>Customize settings</b> for <b>Table settings</b> and select <b>DynamoDB Standard</b> table. For the <b>Read/Write capacity settings</b> select <b>On-demand</b>. Click <b>Create table</b>.</p>
+                                <img src="images/DynamoDB-create-table.png" class="blog_image_small"></img>
+
+                                <p class="text-blog">I've already added a few items to the table so you'd get a hang of its structure:</p>
+                                <img src="images/DynamoDB-base-records.png" class="blog_image"></img>
+
+                                <br/><br/>
+                                <h5>2. Add a new item to DynamoDB</h5>
+
+                                <p class="text-blog">Let's add another item to the table. To do this, just create a Lambda function and provide it the permission to access your table.</p>
+
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    #table name
+    table = dynamodb.Table('Invoices')
+
+    try:
+        response = table.put_item(
+            Item={
+                'PK': 'DEPT#IT',
+                'SK': 'INVOICE#19897',
+                'STATUS': 'PAID',
+                'VENDOR': 'Miracle Corp',
+                'ISSUED': '2023-01-31 12:33:18',
+                'CONTRACT': {
+                    'CONTRACT ID': '753245',
+                    'DISCOUNT': '2%',
+                    'CONTACT PERSON': 'Mona Lisa'
+                }
+            }
+        )
+        return response
+    except Exception as e:
+        print("Error inserting item:", e)
+        raise e
+
+                                </code></pre>
+
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event, context) => {
+    const params = {
+        TableName: 'Invoices',
+        Item: {
+            'PK': 'DEPT#IT',
+            'SK': 'INVOICE#19897',
+            'STATUS': 'PAID',
+            'VENDOR': 'Miracle Corp',
+            'ISSUED': '2023-01-31 12:33:18',
+            'CONTRACT': {
+                'CONTRACT ID': '753245',
+                'DISCOUNT': '2%',
+                'CONTACT PERSON': 'Mona Lisa'
+            }
+        }
+    };
+
+    try {
+        const response = await dynamodb.put(params).promise();
+        console.log('Item added successfully:', response);
+        return response;
+    } catch (err) {
+        console.error('Error adding item:', err);
+        throw err;
+    }
+};
+                                </code></pre>
+
+                                <p class="text-blog">I added a few more items so we could have a good base for our queries:</p>
+                                <img src="images/DynamoDB-full-records.png" class="blog_image"></img>
+
+                                <br/><br/>
+                                <h5>3. Read data from DynamoDB</h5>
+                                <h6>3.1 Get a specific record</h6>
+
+                                <p class="text-blog">In DynamoDB we always need to specify the partition key. Let's get all attributes for Invoice #12532 sent to the Finance department:</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+
+    response = table.get_item(
+        Key={
+            "PK": "DEPT#FINANCE",
+            "SK": "INVOICE#12532"
+        }
+    )
+
+    return response
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB();
+
+exports.handler = async (event, context) => {
+  const params = {
+    Key: {
+      "PK": {S: "DEPT#FINANCE"},
+      "SK": {S: "INVOICE#12532"}
+    },
+    TableName: "Invoices"
+  };
+
+  const response = await dynamodb.getItem(params).promise();
+  return response;
+};
+                                </code></pre>
+
+                                <p class="text-blog">Okay, this was easy. This time let's get the date of issue and the status of the invoice:</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+
+    response = table.get_item(
+        Key={
+            "PK": "DEPT#FINANCE",
+            "SK": "INVOICE#12532"
+        },
+        ProjectionExpression="VENDOR, ISSUED"
+    )
+
+    return response["Item"]
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB();
+                                    
+exports.handler = async (event, context) => {
+    const params = {
+        Key: {
+            "PK": {S: "DEPT#FINANCE"},
+            "SK": {S: "INVOICE#12532"}
+        },
+        TableName: "Invoices",
+        ProjectionExpression: "VENDOR, ISSUED"
+    };
+                                    
+    const response = await dynamodb.getItem(params).promise();
+    return response.Item;
+};                                 
+                                </code></pre>
+
+                                <p class="text-blog">If you're wondering how to get only the "Vendor" from this result:</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+return response["Item"]["VENDOR"]
+                                </code></pre>
+                                <pre style="font-size:10px;"><code class="lang-python">
+return response.Item.VENDOR.S;
+                                </code></pre>
+
+                                <br/>
+                                <h6>3.2 Get all unpaid invoices from the IT department</h6>
+
+                                <p class="text-blog">Okay, let's make something interesting. This time we're going to get a list of all the invoices that are A) sent to the IT department and B) their status is "UNPAID":</p>
+
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+
+    response = table.query(
+        KeyConditionExpression=Key('PK').eq('DEPT#IT'),
+        FilterExpression=Attr('STATUS').eq('UNPAID')
+    )
+
+    return response
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB();
+
+exports.handler = async (event, context) => {
+  const params = {
+    TableName: "Invoices",
+    KeyConditionExpression: 'PK = :pk',
+    FilterExpression: 'STATUS = :status',
+    ExpressionAttributeValues: {
+      ':pk': {S: 'DEPT#IT'},
+      ':status': {S: 'UNPAID'}
+    }
+  };
+
+  const response = await dynamodb.query(params).promise();
+  return response.Items;
+};
+                                </code></pre>
+
+                                <p class="text-blog">The Node.js code throws an error and says <i>STATUS</i> is a reserved word. This means that the name <i>STATUS</i> cannot be used directly in an expression. The solution is to implement <b>ExpressionAttributeNames</b> and perform some other modifications:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB();
+
+exports.handler = async (event, context) => {
+  const params = {
+    TableName: "Invoices",
+    KeyConditionExpression: "#pk = :pkValue",
+    FilterExpression: "#status = :statusValue",
+    ExpressionAttributeNames: {
+      "#pk": "PK",
+      "#status": "STATUS"
+    },
+    ExpressionAttributeValues: {
+      ':pkValue': { S: "DEPT#IT" },
+      ':statusValue': { S: "UNPAID" }
+    }
+  };
+
+  const response = await dynamodb.query(params).promise();
+  return response.Items;
+};
+                                </code></pre>
+                                <p class="text-blog">Though it looks complicated at first, it's fairly easy to understand. For example for the partition key we define <i>KeyConditionExpression</i> as <i>"#pk = :pkValue"</i> using 2 variables. Then we tell the coding engine that <i>"#pk" equals "PK"</i> and define <i>':pkValue'</i> as <i>{ S: "DEPT#IT" }</i>. Same for <i>STATUS</i>. Makes sense, right? For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html" target="_blank">Reserved Words</a> in the Amazon DynamoDB Developer Guide.</a></p>
+                                
+                                <h6>3.3 Get a list of all invoices from the Sales department that were issued in 2023</h6>
+                                <p class="text-blog">Now we make one step further and try to get a list based on date, which might be of interest to you since the <i>ISSUED</i> attribute was defined as a String. There is no "DATE" attribute type in DynamoDB and yet AWS makes this fairly easy. Here we go:</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+
+    response = table.query(
+        KeyConditionExpression=Key('PK').eq('DEPT#SALES'),
+        FilterExpression=Attr('ISSUED').begins_with('2023')
+    )
+
+    return response
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event, context) => {
+  const params = {
+    TableName: "Invoices",
+    KeyConditionExpression: "#pk = :pk",
+    FilterExpression: "begins_with(ISSUED, :issued)",
+    ExpressionAttributeNames: {
+      "#pk": "PK"
+    },
+    ExpressionAttributeValues: {
+      ":pk": "DEPT#SALES",
+      ":issued": "2023"
+    }
+  };
+
+  const response = await dynamodb.query(params).promise();
+  return response.Items;
+};
+                                </code></pre>
+
+                                <br/>
+                                <h6>3.4 Use variables in the condition</h6>
+                                <p class="text-blog">Let's initiate a variable in our expression. Let's go back to 3.2 where we retrieved a list of all unpaid invoices of the IT department. Now let's make this expression generic and use a variable for the department's name:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+    dept_name = "IT"
+    response = table.query(
+        KeyConditionExpression=Key('PK').eq(f"DEPT#{dept_name}"),
+        FilterExpression=Attr('STATUS').eq('UNPAID')
+    )
+
+    return response
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event, context) => {
+  const dept_name = "IT";
+  const params = {
+    TableName: "Invoices",
+    KeyConditionExpression: "#pk = :pk",
+    FilterExpression: "#status = :statusValue",
+    ExpressionAttributeNames: {
+      "#pk": "PK",
+      "#status": "STATUS"
+      
+    },
+    ExpressionAttributeValues: {
+      ":pk": `DEPT#${dept_name}`,
+      ":statusValue": "UNPAID"
+    }
+  };
+
+  const response = await dynamodb.query(params).promise();
+  return response.Items;
+};
+                                </code></pre>
+
+                        
+
+
+                                <br/>
+                                <h5>4. Update an item</h5>
+
+                                <p class="text-blog">I hope it's clear now how to insert and read data from a DynamoDB table. Let's see an example of updating an item. Let's suppose that invoice #15620 has been paid, so let's update the status to "PAID":</p>
+
+                                <pre style="font-size:10px;"><code class="lang-python">
+import json
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+
+    response = table.update_item(
+        Key={
+            "PK": "DEPT#IT",
+            "SK": "INVOICE#15620"
+        },
+        UpdateExpression="set #status = :status",
+        ExpressionAttributeNames={
+            "#status": "STATUS",
+        },
+        ExpressionAttributeValues={
+            ":status": "PAID",
+        }
+    )
+    
+    return response
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event, context) => {
+  const params = {
+    TableName: 'Invoices',
+    Key: {
+      PK: 'DEPT#IT',
+      SK: 'INVOICE#15620'
+    },
+    UpdateExpression: 'set #status = :status',
+    ExpressionAttributeNames: {
+      '#status': 'STATUS'
+    },
+    ExpressionAttributeValues: {
+      ':status': 'PAID'
+    }
+  };
+ const response = await dynamodb.update(params).promise();
+    return response;
+  
+};
+                                </code></pre>
+
+                                <p class="text-blog">Okay, if you'd like to update more values then this is how to do it:</p>
+
+
+                                <pre style="font-size:10px;"><code class="lang-python">
+UpdateExpression='set #status = :status, #vendor = :vendor',
+ExpressionAttributeNames={
+    '#status': 'STATUS',
+    '#vendor': 'VENDOR'
+},
+ExpressionAttributeValues={
+    ':status': 'PAID',
+    ':vendor': 'ABC Corp'
+}
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+UpdateExpression: 'set #status = :status, #vendor = :vendor',
+ExpressionAttributeNames: {
+    '#status': 'STATUS',
+    '#vendor': 'VENDOR'
+},
+ExpressionAttributeValues: {
+    ':status': 'PAID',
+    ':vendor': 'ABC Corp'
+}
+                                </code></pre>
+
+                                <p class="text-blog">If you're wondering how to update multiple records in the table, I have bad news for you. DynamoDB does not support batch update and even with a workaround you can't update more than 25 items at a time (for this you need to scan the whole table first and write a code that updates every 25 items per request, but this is an expensive operation). This is one of the things you cannot use a NoSQL db for.</p>
+
+
+                                <br/>
+                                <h5>5. Delete an item</h5>
+                                
+                                <p class="text-blog"></p>
+
+
+                                <pre style="font-size:10px;"><code class="lang-python">
+import boto3
+
+def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('Invoices')
+    
+    response = table.delete_item(
+        Key={
+            'PK': 'DEPT#IT',
+            'SK': 'INVOICE#15620'
+        }
+    )
+    return response
+                                </code></pre>
+                                <p class="text-blog">Here's the same code in Node.js:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+const AWS = require('aws-sdk');
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event, context) => {
+  const params = {
+    TableName: 'Invoices',
+    Key: {
+      PK: 'DEPT#IT',
+      SK: 'INVOICE#15620'
+    }
+  };
+
+    const response = await dynamodb.delete(params).promise();
+  return response;
+};
+                                </code></pre>
+
+                                <br/>
+                                <h5>Final thoughts</h5>
+                                <p class="text-blog">As you see I specified the partition key in all of our queries. DynamoDB is a NoSQL database and is designed differently from traditional relational databases. Should you want to make a request like getting a list of all unpaid invoices, you should either use <b>Global Secondary Indexes</b> or an SQL database like <b>Amazon RDS</b> or <b>Aurora</b>. Also, in DynamoDB it's not possible to get the average or the sum of certain items, it's not designed to perform mathematical operations. DynamoDB it's a fantastic concept for storing all kinds of data in just one table and it makes queries lightning-fast.</p>
+
+
+                                <br/>
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>
