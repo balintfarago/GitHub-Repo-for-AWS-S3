@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="DynamoDB example" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="https://balintfarago.com">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#education">Education</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item" href="../DynamoDB intro/Everything-you-need-to-know-about-DynamoDB.html">Everything you need to know about DynamoDB</a>
+                                            <a class="dropdown-item" href="../Build a simple webapp/Build-webapp-fronted-backend-lambda-dynamodb.html">Build a simple webapp that writes form data into DynamoDB</a>
+                                            <a class="dropdown-item" href="../DynamoDB operations/DynamoDB-write-read-update-delete-python-nodejs.html">How to write, read, update and delete items in a DynamoDB table (Python, Node.js)</a>
+                                            <a class="dropdown-item" href="../Wordpress with Lightsail/Create a Wordpress site with Amazon Lightsail.html">Create a Wordpress site with Amazon Lightsail</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>Create a Wordpress site with Amazon Lightsail</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">25 April, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">I decided to run an Agile blog and chose AWS as my hosting provider. In this tutorial I'm going to show you how I set up Amazon Lightsail for my Wordpress blog.</p>
+                                <br/>
+                            
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create a Lightsail instance</li>
+                                    <li>Connect to your Lightsail instance</li>
+                                    <li>Log in to your Wordpress site</li>
+                                    <li>Create a static IP address for your Lightsail instance</li>
+                                    <li>Add a domain name to your Lightsail instance</li>
+                                    <li>Change the default username of your Wordpress page</li>
+                                </ol>
+
+                                <br/>
+                                <h5>1. Create a Lightsail instance</h5>
+                             
+                                <p class="text-blog">Open <a href="https://lightsail.aws.amazon.com/ls/webapp/home/instances" target="_blank">Lightsail console</a> and click <b>Create instance</b>.</p>
+                                <img src="images/Lightsail_1.png" class="blog_image"></img>
+                                <p class="text-blog">Select a server location. Ideally, you'll want to choose a location closest to your target audience. Then select Windows or Linux as your operating system. Since you're not going to perform administrative tasks, it doesn't really matter which one you pick.</p>
+                                <img src="images/Lightsail_2.png" class="blog_image"></img>
+                                <p class="text-blog">Now select a plan. You can get started for just $3.50 per month.</p>
+                                <p class="text-blog">Finally, you'll need to enter a name for your instance and click <b>Create instance</b>.</p>
+                                <img src="images/Lightsail_3.png" class="blog_image"></img>
+                                <br/><br/>
+                                <p class="text-blog">Your instance is now created.</p>
+
+                                <br/><br/>
+                                <h5>2. Connect to your Lightsail instance</h5>
+                                <p class="text-blog">Click on the tiny orange box next to the name of your instance.</p>
+                                <img src="images/Lightsail_4.png" class="blog_image"></img>
+                                <p class="text-blog">After the browser-based SSH client window opens, enter the following command to retrieve the default application password:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+cat $HOME/bitnami_application_password
+                                </code></pre>
+                                <p class="text-blog">Make note of the password displayed on the screen. You'll use it to sign in to the administrator dashboard of your WordPress website. You can close the terminal now.</p>
+                                
+                                <br/><br/>
+                                <h5>3. Log in to your Wordpress site</h5>
+
+                                <p class="text-blog">We don't have a domain name yet, but we do have a public IP address that you find here:</p>
+                                <img src="images/Lightsail_5.png" class="blog_image"></img>
+                                <p class="text-blog">In a browser window, now type <i>http://PublicIpAddress/wp-login.php</i> and replace "PublicIpAddress" with your IP address.</p>
+                                <p class="text-blog">It asks for a username and a password. In the <b>Username or Email Address</b> field, type <i>user</i>. Then, enter the password that you copied earlier. Click <b>Log in</b>. You'll then be taken to your WordPress admin dashboard.</p>
+                                <p class="text-blog">You are now signed in to the administrator dashboard of your WordPress website. Well done!</p>
+                                <img src="images/Wordpress-installed.png" class="blog_image"></img>
+                                <p class="text-blog">Everything that comes next is optional, but recommended.</p>
+
+                                <br/>
+                                <h5>4. Create a static IP address for your Lightsail instance</h5>
+                                
+                                <p class="text-blog">The default dynamic public IP address attached to your Amazon Lightsail instance changes every time you stop and restart the instance. If you create a static IP address and attach it to your instance, it will keep the public IP address from changing. Later, when you point a registered domain name to your instance, you don't have to update your domain's DNS records every time you stop and restart your instance. </p>
+                                <p class="text-blog">Your Lightsail instances are charged only when they're in the running or stopped state.</p>
+                                <p class="text-blog">Let's try out if the IP address really changes and stop the instance. Click on the three dots on the instance's image and select Stop.</p>
+                                <img src="images/Lightsail-stop-instance.png" class="blog_image_small"></img>
+
+                                <p class="text-blog">Now if you want to refresh your Wordpress page, it won't open. Click on the three dots again and this time select <b>Start</b>. As soon as the status changes to <b>Running</b>, your website is up again, but with a different IP.</p>
+                                <img src="images/Lightsail-changed-IP.png" class="blog_image_small"></img>
+                                
+                                <p class="text-blog">Let's create a static IP. You can attach one static IP to a Lightsail instance, and it's already included in the plan you selected at the time of creating the instance.</p>
+                                <p class="text-blog">In the Lightsail console, choose <b>Networking</b>. Choose <b>Create static IP</b>. Select or confirm the location of the IP, attach it to your instance and give it a unique name. Click <b>Create</b>.</p>
+                                <img src="images/Lightsail-create-static-IP.png" class="blog_image_small"></img>
+                                <p class="text-blog">On the <b>Networking</b> tab of your instance's management page, you'll see a blue pushpin next to your public IP address. This indicates that the IP address is now static.</p>
+
+                                <br/><br/>
+                                <h5>5. Add a domain name to your Lightsail instance</h5>
+                                <p class="text-blog">I'm going to use Lightsail to register a new domain with Amazon Route 53. Since we're purchasing this domain through Amazon, it automatically creates a DNS zone that has the same name as the domain.</p>
+                                <p class="text-blog">Click <b>Register domain</b>. Specify a domain name and click <b>Check availability</b>. Fill out the domain contact information.</p>
+                                <p class="text-blog">The domain registration takes a while, so go out and grab a cup of coffee.</p>
+                               
+                                <p class="text-blog">In Lightsail, go to the <b>Domains</b> tab and select your new domain as the custom domain. Click <b>Assign</b>.</p>
+                                <img src="images/Lightsail_add_custom_domain.png" class="blog_image"></img>
+                                
+                                <br/><br/>
+                                <h5>6. Add SSL/TLS certificates to your website</h5>
+                                <p class="text-blog">If you now open your site by typing the public IP address in the browser, a sample webpage will come up and the browser will say your access is <i>not secure</i>. To make the connection secure, we'll create a certificate.</p>
+                                <p class="text-blog">Before we create a certificate, we need to create a Lightsail distribution. An Amazon Lightsail content delivery network (CDN) distribution caches your website or web application content at worldwide locations. When your user requests content that you're serving through a distribution, the request is routed to the nearest location in terms of latency.</p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+                                <p class="text-blog"></p>
+
+
+                                <h5>7. Change the default username of your Wordpress page</h5>
+
+                                <p class="text-blog">For now you can only log into your Wordpress admin console by using the username <b>user</b>. Since this username is provided by Wordpress by default, you can only change it in your Wordpress console. As a matter of fact, you need to create a new user and delete this one.</p>
+                                <p class="text-blog">To do this, select <b>Users</b> then <b>Add New</b> on the left pane. Provide a name, an email address and make sure you select <b>Administrator</b> as the role. You can use the default password provided, or create a new one.</p>
+                                <img src="images/Wordpress-new-user.png" class="blog_image"></img>
+                                
+                                <p class="text-blog">Now log out of the account and log in with your new user. Go to <b>Users</b> and delete the default user.</p>
+                                
+                                
+                                
+                                
+                                
+                                
+                                <p class="text-blog">Congratulations! You created a new wordpress site with Amazon Lightsail.</p>
+                               
+                                <br/>
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>
