@@ -136,6 +136,7 @@
                                     <li>Log in to your Wordpress site</li>
                                     <li>Create a static IP address for your Lightsail instance</li>
                                     <li>Add a domain name to your Lightsail instance</li>
+                                    <li>Add SSL/TLS certificates to your website</li>
                                     <li>Change the default username of your Wordpress page</li>
                                 </ol>
 
@@ -202,11 +203,66 @@ cat $HOME/bitnami_application_password
                                 <h5>6. Add SSL/TLS certificates to your website</h5>
                                 <p class="text-blog">If you now open your site by typing the public IP address in the browser, a sample webpage will come up and the browser will say your access is <i>not secure</i>. To make the connection secure, we'll create a certificate.</p>
                                 <p class="text-blog">Before we create a certificate, we need to create a Lightsail distribution. An Amazon Lightsail content delivery network (CDN) distribution caches your website or web application content at worldwide locations. When your user requests content that you're serving through a distribution, the request is routed to the nearest location in terms of latency.</p>
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
-                                <p class="text-blog"></p>
+                                <p class="text-blog">Go to the <b>Networking</b> tab and click <b>Create distribution</b>.</p>
+                                <p class="text-blog">In the <b>Choose your origin</b> section of the page, choose the AWS Region in which your origin resource was created. After that, select the origin. An origin can be an instance, a container or a bucket. In our example we earlier created a Wordpress instance, so let's select it.</p>
+                                <img src="images/Lightsail-distribution-1.png" class="blog_image_small"></img>
+                                
+                                <p class="text-blog">For <b>Caching behavior</b> just select the <b>Best for Wordpress</b> option, choose a distribution plan and provide a name for the distribution. Finally, click <b>Create distribution</b>.</p>
+                                <p class="text-blog">Select your distribution and go to <b>Custom domains</b> tab. Click <b>Create certificate</b>. Enter a name for your certificate then specify your domain. I added both thebadscrummaster.com and www.thebadscrummaster.com. Click <b>Create certificate</b>. It will take about 30 seconds for Amazon to add the certificate's validation record to the DNS of the primary domain.</p>
+                                <p class="text-blog">Finally, attach the certificate by selecting it and click <b>Attach</b>.</p>
+                                <img src="images/Lightsail-attach-certificate.png" class="blog_image_small"></img>
+                                
+                                <p class="text-blog">We're almost done. We still need to update the DNS records to point our domain on the certificate to our distribution.</p>
+                                <p class="text-blog">Go to your distribution's page. Make note of the default domain. It's something similar to u1be1hut8953ag.cloudfront.net. We must add this value as part of an alias record in the DNS of our domain.</p>
+                                <p class="text-blog">On the Lightsail home page, choose the <b>Domains & DNS</b> tab. Under the <b>DNS zones</b> section, choose your domain name. Choose the <b>DNS records</b> tab. If an A record already exists and it points to an IP instead of the distribution, you need to edit the record. If such a record does not yet exist, choose <b>Add record</b>.</p>
+                                <img src="images/DNS-records-lightsail-distribution.png" class="blog_image_small"></img>
+                                <p class="text-blog">Now both the original and the www subdomain routes to the Cloudfront distribution. It will take a while until this gets activated, so don't worry that your browser says your domain is not secure, while the distribution is. It took me about 20 minutes.</p>
+                                <img src="images/DNS-records-pointing-to-distribution.png" class="blog_image_small"></img>
+
+                                <p class="text-blog">I'm not sure if that will happen to you, but now my page is not formatted correctly. Opening the distribution directly shows the same error. This is because we haven't edited the WordPress configuration file to make it work with our distribution.</p>
+
+                                <p class="text-blog">In the Lightsail console, choose the browser-based SSH client.</p>
+                                <p class="text-blog">After you're connected to your instance, enter the following command to create a backup of the wp-config.php file. If something goes wrong, you can restore the file using the backup.</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+sudo cp /opt/bitnami/wordpress/wp-config.php /opt/bitnami/wordpress/wp-config.php.backup
+                                </code></pre>
+                                
+                                <p class="text-blog">Enter the following command to open the wp-config.php file using Vim.</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+sudo vim /opt/bitnami/wordpress/wp-config.php
+                                </code></pre>
+
+                                <p class="text-blog">Press I to enter insert mode in Vim and delete the following lines from the code:</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+                                </code></pre>
+                                
+                                <p class="text-blog">Then add these lines of code where you previously deleted the code:</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+if (isset($_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO'])
+&& $_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO'] === 'https') {
+$_SERVER['HTTPS'] = 'on';
+}
+                                </code></pre>
+
+                                
+                                <p class="text-blog">Press the Esc key to exit insert mode in Vim, then type :wq! and press Enter to save your edits (write) and quit Vim.</p>
+                                <p class="text-blog">Enter the following command to restart the Apache service on your instance.</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+sudo /opt/bitnami/ctlscript.sh restart apache
+                                </code></pre>
+                                <p class="text-blog">Wait a few moments for your the Apache service to restart, then test that your distribution is caching your content. If something went wrong, re-connect to your instance using the browser-based SSH client. Run the following command to restore the wp-config.php file using the backup you created earlier in this guide.</p>
+                                <pre style="font-size:10px;"><code class="lang-python">
+sudo cp /opt/bitnami/wordpress/wp-config.php.backup /opt/bitnami/wordpress/wp-config.php
+                                </code></pre>
+                                <br/>
+                                <p class="text-blog">Now your website should work fine with either www or without www and it should always redirect http to https. If it does not, just wait 5-10 minutes and make sure you clear the browser cache.</p>
 
 
+                                <br/>
                                 <h5>7. Change the default username of your Wordpress page</h5>
 
                                 <p class="text-blog">For now you can only log into your Wordpress admin console by using the username <b>user</b>. Since this username is provided by Wordpress by default, you can only change it in your Wordpress console. As a matter of fact, you need to create a new user and delete this one.</p>
