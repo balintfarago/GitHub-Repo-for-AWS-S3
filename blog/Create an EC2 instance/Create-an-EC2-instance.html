@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Balint Farago's personal website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Use Lambda To Move Files And Send Emails" />
+        <meta content="Shreethemes" name="author" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../images/favicon.ico">
+        <!-- Bootstrap -->
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- MK Lightbox -->
+        <link href="../../css/mklb.css" rel="stylesheet" type="text/css" />
+        <!-- Icon -->
+        <link href="../../css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+                  
+        <!-- SLIDER -->
+        <link rel="stylesheet" href="../../css/tiny-slider.css"/>    
+        <!-- Custom Css -->
+        <link href="../../css/style.css" rel="stylesheet" type="text/css" id="theme-opt" />
+        <link href="../../css/colors/default.css" rel="stylesheet" id="color-opt">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <link href="../../css/prism.css" rel="stylesheet" />
+        
+    </head>
+
+    <body>
+        <script src="../../js/prism.js"></script>
+        <!-- Loaderr -->
+        <div id="preloader">
+            <div id="status">
+                <div class="logo">
+                    <img src="../../images/logo_new.png" height="20" class="d-block mx-auto" alt="">
+                </div>
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom navbar-light sticky">
+    		<div class="container">
+                <a class="navbar-brand" href="https://balintfarago.com">
+                    <img src="../../images/logo_new.png" class="logo-light-mode" alt="">
+                    <img src="../../images/logo-new.png" class="logo-dark-mode" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span data-feather="menu" class="fea icon-md"></span>
+                </button><!--end button-->
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul id="navbar-navlist" class="navbar-nav navbar-nav-link mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#home">Home</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#services">AWS Services</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#resume">Resume</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html#contact">Contact</a>
+                        </li><!--end nav item-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AWS Tutorials
+                            </a>
+                            <div class="dropdown-menu rounded m-0" aria-labelledby="navbarDropdown">
+                                <div class="container mx-0 mx-md-0">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
+                                            <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
+                                            <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item" href="../DynamoDB intro/Everything-you-need-to-know-about-DynamoDB.html">Everything you need to know about DynamoDB</a>
+                                            <a class="dropdown-item" href="../Build a simple webapp/Build-webapp-fronted-backend-lambda-dynamodb.html">Build a simple webapp that writes form data into DynamoDB</a>
+                                            <a class="dropdown-item" href="../DynamoDB operations/DynamoDB-write-read-update-delete-python-nodejs.html">How to write, read, update and delete items in a DynamoDB table (Python, Node.js)</a>
+                                            <a class="dropdown-item" href="../Wordpress with Lightsail/Create a Wordpress site with Amazon Lightsail.html">Create a Wordpress site with Amazon Lightsail</a>
+                                            <a class="dropdown-item unclickable" href="">More on the way!</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </div><!--end container-->
+                            </div>
+                        </li><!--end nav item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://thebadscrummaster.com">My Agile blog</a>
+                        </li><!--end nav item-->
+                    </ul>
+
+                    <ul class="list-unstyled mb-0 mt-2 mt-sm-0 social-icon">
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/balintfarago/" target="_blank"><i class="mdi mdi-linkedin"></i></a></li>
+                    </ul>
+                </div> 
+            </div><!--end container-->
+		</nav><!--end navbar-->
+        <!-- Navbar End -->
+
+        
+      
+        <!-- Blog STart -->
+        <section class="section">
+            <div class="container">
+
+                <div class="row">
+                    <!-- BLog Start -->
+                    <div>
+                        <div class="blog position-relative overflow-hidden shadow rounded">
+                            <div class="section-title text-center">
+                                <div class="position-relative">
+                                    <h4 class="title"><br/><br/>Create an EC2 instance, transfer files and manage users</h4>
+                                    <ul class="list-unstyled mt-3">
+                                        <li class="list-inline-item me-3"><i class="mdi mdi-account-heart me-1"></i><a href="javascript:void(0)" class="text-muted">Balint Farago</a></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-calendar-edit me-1"></i><span class="text-muted">5 Sep, 2023</span> </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="content p-4">
+                                <p class="text-blog">Setting up a website with <a href="https://balintfarago.com/blog/Wordpress%20with%20Lightsail/Create%20a%20Wordpress%20site%20with%20Amazon%20Lightsail.html" target="_blank">Amazon Lightsail</a> is easy. Though Lightsail makes it easy for you to run your site or blog, it lacks the flexibility of setting up your own server and parameters. While Lightsail is best used for smaller sites, web apps and playgrounds, EC2 is more like for enterprise applications, big data and migrations from on-premise environments. It can also be used by small companies or startups for dynamically scaling CPU, memory and storage. If you've ever worked with DigitalOcean or Vultr, you'll find Amazon EC2 quite similar.</p>
+                                
+                                <p class="text-blog"><b>Table of contents:</b></p>
+                                <ol class="text-blog">
+                                    <li>Create a key pair</li>
+                                    <li>Create a security group</li>
+                                    <li>Launch an instance</li>
+                                    <li>Connect to your instance</li>
+                                    <li>Transfer files to your instance using an SCP client</li>
+                                    <li>Create a folder for transferring files</li>
+                                    <li>Create a user to manage the instance</li>
+                                    <li>Giving sudo rights to a user</li>
+                                    <li>Install LAMP on an Amazon EC2 instance</li>
+                                </ol>
+                                    
+                                <p class="text-blog">Amazon EC2 as an IaaS service provides a complete infrastructure that you can configure to suit your needs. With EC2 you launch instances, which are mini computers in plain English. When you launch such an instance, you're actually using a part of a server, dedicated for you and since you are able install and configure the OS, it gives you a feel of running your own system.</p>
+                                <p class="text-blog">AWS offers many kinds of instances:</p>
+                                <ul>
+                                    <li><b>General purpose instances</b>: they provide a balance in compute, memory and network capabilities. Best used for app servers, backend servers, and small and medium databases.</li>
+                                    <li><b>Compute optimized instances</b>: these instances focuses computational power. If you need processors with high performance, such as gaming, media transcoding or batch processing, then compute optimized instances should be your choice.</li>
+                                    <li><b>Memory optimized instances</b>: these instances are designed for fast optimized performance of large data set processing in memory.</li>
+                                    <li><b>Storage optimized instances</b>: these are designed to manage workloads where you need constant and high speed read write access.</li>
+                                </ul>
+
+                                <p class="text-blog">When you select an instance, you need to plan when and how you are going to use it. Amazon offers several solutions to meet your needs:</p>
+                                <li><b>On demand instances</b> can be requested on demand. They do not require any upfront costs, you request it when you need it. These instances are quite expensive.</li>
+                                <li><b>Spot instances</b> are ideal for short running workloads with flexible start and end dates while having no issues with being interrupted. Since Amazon can reclaim these instances any time, they are quite cheap.</li>
+                                <li><b>Reserved instances</b> are best used when you are uncertain about the capacity and time in which you want to use EC2 resources. As the name says, you reserve an instance for a certain period of time, for example for 1 year.</li>
+                                <li><b>Dedicated instances</b> are physical hosts dedicated for you. Nobody else uses them.</li>
+                                
+                                <p class="text-blog">I could go on and on about these instances and terms, but I know launching an EC2 instance is more fun then reading documentation, so let's get started!</p>
+                                
+
+                                <h5>1. Create a Key Pair</h5>
+
+                                <p class="text-blog">AWS uses public-key cryptography to secure the login information for your instance. A Linux instance has no password; you use a key pair to log in to your instance securely. You specify the name of the key pair when you launch your instance, then provide the private key when you log in using SSH.</p>
+                                
+                                <ol>
+                                    <li>Open Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/" target="_blank">https://console.aws.amazon.com/ec2/</a></li>
+                                    <li>Select <b>Key Pairs</b> on the left pane and choose <b>Create key pair</b></li>
+                                    <li>Provide a name</li>
+                                    <li>For <b>Key pair type</b>, choose RSA or ED25519 for Linux and RSA for Windows</li>
+                                    <li>Choose a <b>Private key format</b>. It's up to you whether you'd like to use OpenSSH or PUTTY</li>
+                                    <li>Finally, choose <b>Create key pair</b>.</li>
+                                </ol>
+
+                                <p class="text-blog">The private key file is automatically downloaded to your computer. Save it in a safe place. If you lose it, you will need to generate another key!</p>
+
+                                <p class="text-blog">If you plan on using an SSH client on a macOS or Linux computer to connect to your Linux instance, use the following command to set the permissions of your private key file so that only you can read it.</p>
+
+                                <img src="images/Create-Key-Pair.png" class="blog_image"></img>
+
+                                <h5>2. Create a security group</h5>
+                                
+                                <p class="text-blog">Security groups act as a firewall for associated instances, controlling both inbound and outbound traffic. You must add rules to a security group that enable you to connect to your instance from your IP address using SSH.</p>
+
+                                <ol>
+                                    <li>Open again the <b>Amazon EC2 console</b></li>
+                                    <li>Select <b>Security Groups</b> on the left pane anc choose <b>Create security group</b></li>
+                                    <li>Provide a name and leave the <b>VPC</b> as it is. For a security group it's recommended to include the region's name in the security group's name.</li>
+                                    <li>For Inbound rules, create rules that allow specific traffic to reach your instance. We're going to create a web server later that should accept HTTP and HTTPS traffic. To do this:</li>
+                                        <ol>
+                                            <li>Choose <b>Add rule</b>. For <b>Type</b>, choose <b>HTTP</b>, for source, choose Anywhere</li>
+                                            <li>Do the same with <b>HTTPS</b></li>
+                                            <li>Finally, for <b>Type</b>, choose <b>SSH</b>. For <b>source</b>, choose <b>My IP</b> and provide the IP address of your computer. Amazon will automatically fill out the field with your IP address. You can also provide a range, if your IP address regularly changes within a range. </li>
+                                        </ol>
+                                    <li>For <b>Outbound rules</b>, keep the default rule, which allows all outbound traffic.</li>
+                                    <li>Finally, choose <b>Create security group</b>.</li>
+                                </ol>
+
+                                <img src="images/Create-Security-Group.png" class="blog_image"></img>
+
+                                <h5>3. Launch an instance</h5>
+
+                                <ol>
+                                    <li>Open again the <b>Amazon EC2 console</b></li>
+                                    <li>On the EC2 dashboard, in the <b>Launch instance box</b>, click <b>Launch instance</b></li>
+                                    <li>Enter a descriptive <b>Name</b> for your instance (I named it My Test Instance)</li>
+                                    <li>Under <b>Application and OS Images</b>, do the following:</li>
+                                    <ol>
+                                        <li>Choose <b>Quick Start</b>, and then choose <b>Amazon Linux</b> as the OS for the instance</li>
+                                        <li>From <b>Amazon Machine Image (AMI)</b>, select an HVM version of Amazon Linux 2 (I selected Amazon Linux 2 AMI (HVM)). The reason I selected this option is because this image is free tier eligible.</li>
+                                    </ol>
+                                    <li>Under <b>Instance type</b>, from the list select the hardware configuration for your instance. Choose t3.micro, which is selected by default and is free tier eligible.</li>
+                                    <li>Under <b>Key pair (login)</b>, for <b>Key pair name</b>, choose the key pair that you created when getting set up. If you choose to proceed without a key, you won't be able to connect to the instance.</li>
+                                    <li>Next to <b>Network settings</b>, choose Edit. Leave everything as it is and select the security group you created earlier.</li>
+                                </ol>
+
+                                <img src="images/Launch-An-EC2-Instance_1.png" class="blog_image"></img>
+                                <img src="images/Launch-An-EC2-Instance_2.png" class="blog_image"></img>
+                                
+                                <h5>4. Connect to your instance</h5>
+
+                                <p class="text-blog">There are many ways to connect to your instance. I will show you how to connect to your instance with EC2 Instance Connect and transfer files between your computer and your instance. </p>
+
+                                .......
+
+                                <p class="text-blog">This was pretty easy so let's try connecting from your machine using SSH. I'm using MacOS.</p>
+                                <p class="text-blog">To connect to your instance, you will need the following information:</p>
+
+                                <ul>
+                                    <li>Public DNS name or IP address and user name</li>
+                                    <li>The private key you generated earlier</li>
+                                    <li>An SSH client on your computer</li>
+                                </ul>
+
+                                <p class="text-blog">To get the basic information about your instance, click Instances on the left and select your instance. You can find the DNS name under Public IPv4 DNS. If you assigned an IPv6 address to your instance, you can connect to it using that address instead of a public IPv4 address or a public IPv4 DNS hostname. In order to do this, your computer must be configured to use IPv6.</p>
+
+                                <img src="images/Get-Information-About-Your-EC2-Instance.png" class="blog_image"></img>
+
+                                <p class="text-blog">You can connect to your instance using the username for your user account or the default username for the AMI that you used to launch your instance. The default username for Amazon Linux is ec2-user.</p>
+                                <p class="text-blog">Now you have everything you need to connect to your instance.</p>
+                                <p class="text-blog">On MacOS open terminal and type this:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    ssh -i Documents/Tanulás/AWS/EC2/EC2Key.pem myuser@ec2-16-171-34-3.eu-north-1.compute.amazonaws.com
+                                </code></pre>
+
+                                <p class="text-blog">Make sure you type the fully-qualified path to the location on your computer of the .pem file.</p>
+                                <p class="text-blog">If you see a timeout error, the IP address you earlier provided in your security group may already have been changed. At least that’s what happened in my case. To fix this, edit the Security Group you created earlier and modify your local IP address on port 22. For more troubleshooting, please see <a href="https://repost.aws/knowledge-center/ec2-linux-resolve-ssh-connection-errors" target="_blank">https://repost.aws/knowledge-center/ec2-linux-resolve-ssh-connection-errors</a>.</p>
+                                <p class="text-blog">Now should see a message like this:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    The authenticity of host 'ec2-16-171-34-3.eu-north-1.compute.amazonaws.com (16.181.44.4)' can't be established.
+                                    ED25519 key fingerprint is SHA256:toalhxnx30xUq1cUC6GSTUBsdx3I/bvjP/GxVGsrj/0.
+                                    This key is not known by any other names
+                                    Are you sure you want to continue connecting (yes/no/[fingerprint])? 
+
+                                </code></pre>
+
+                                <p class="text-blog">Type yes.</p>
+                                <p class="text-blog">You might see the following error:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    Warning: Permanently added 'ec2-16-181-44-4.eu-north-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    @         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+                                    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+                                    Permissions 0644 for 'Documents/Tanulás/AWS/EC2/EC2Key.pem' are too open.
+                                    It is required that your private key files are NOT accessible by others.
+                                    This private key will be ignored.
+                                    Load key "Documents/Tanulás/AWS/EC2/EC2Key.pem": bad permissions
+                                    ec2-user@ec2-16-181-44-4.eu-north-1.compute.amazonaws.com: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+                                </code></pre>
+
+                                <p class="text-blog">It is generally a good practice - and in this case it is required - to restrict access to the Private key. Use the following command in your SSH client to set the permissions of the private key so that only you can use it:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    chmod 400 Documents/Tanulás/AWS/EC2/EC2Key.pem 
+                                </code></pre>
+                                
+                                <p class="text-blog">Finally we are connected:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    __|  __|_  )
+                                    _|  (     /   Amazon Linux 2 AMI
+                                   ___|\___|___|
+                             
+                                https://aws.amazon.com/amazon-linux-2/
+                                [ec2-user@ip-182-41-52-53 ~]$                              
+                                </code></pre>
+
+                                <h5>5. Transfer files to your instance using an SCP client</h5>
+
+
+                                <p class="text-blog">To transfer a file to the destination on the instance, enter the following command from your computer.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    scp -i Documents/Tanulás/AWS/EC2/EC2Key.pem Documents/Tanulás/AWS/EC2/test.rtf ec2-user@ec2-16-171-34-3.eu-north-1.compute.amazonaws.com
+                                </code></pre>
+
+
+                                <p class="text-blog">The format is:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    scp -i /path/key-pair-name.pem /path/my-file.txt ec2-user@instance-public-dns-name:path/
+                                </code></pre>
+
+                                <p class="text-blog">To see where this file is going to be uploaded on the server, type <i>pwd</i> after connecting to the instance. Then exit.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    [ec2-user@ip-182-41-52-53 ~]$ pwd
+                                    /home/ec2-user
+                                </code></pre>
+
+                                <p class="text-blog">Make sure you run the scp command from your computer and after you connected to the server, because the instance is unable to reach files on your local computer.</p>
+                                <p class="text-blog">This time I ran into this error:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    scp: /test.rtf: Permission denied
+                                </code></pre>
+
+                                <p class="text-blog">This means that the remote destination directory doesn't have the necessary permissions to allow the ec2-user to write files to it.
+                                <br/>To overcome this, change the folder to the home folder and use this command:
+                                </p>
+
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    scp -i Documents/Tanulás/AWS/EC2/EC2Key.pem "Documents/Tanulás/AWS/EC2/test.rtf" ec2-user@ec2-16-181-44-4.eu-north-1.compute.amazonaws.com:~
+                                </code></pre>
+                                <p class="text-blog">This time it worked:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    test.rtf                                      100%  367     7.6KB/s   00:00 
+                                </code></pre>
+
+                                <p class="text-blog">To transfer this file to your local computer, reverse the order of the host parameters:</p>
+
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    scp -i Documents/Tanulás/AWS/EC2/EC2Key.pem ec2-user@ec2-16-181-44-4.eu-north-1.compute.amazonaws.com:~/test.rtf Documents/Tanulás/AWS/EC2/test2.rtf
+                                </code></pre>
+
+                                <h5>6. Create a folder for transferring files</h5>
+                                
+                                <p class="text-blog">Let's see the current folder:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    [ec2-user@ip-182-41-52-53 ~]$ pwd
+                                    /home/ec2-user
+                                </code></pre>
+
+                                <p class="text-blog">Let’s create a new folder:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    mkdir myfiles
+                                </code></pre>
+
+                                <p class="text-blog">Now list the files and folders in the current folder:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    [ec2-user@ip-182-41-52-53 ~]$ ls -l
+                                    total 4
+                                    drwxrwxr-x 2 ec2-user ec2-user   6 Aug 18 12:28 myfiles
+                                    -rw-r--r-- 1 ec2-user ec2-user 367 Aug 18 12:17 test.rtf                                    
+                                </code></pre>
+
+                                <p class="text-blog">The myfiles folder can be now written by the owner and the group, including the ec2-user. Let's upload the same test.rtf file into that folder:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    scp -i Documents/Tanulás/AWS/EC2/EC2Key.pem Documents/Tanulás/AWS/EC2/test.rtf ec2-user@ec2-16-181-44-4.eu-north-1.compute.amazonaws.com:~/myfiles
+                                </code></pre>
+
+                                <p class="text-blog">Let's go into the <i>myfiles</i> folder and see if the file is really there: </p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    cd myfiles
+                                    ls -l
+                                    total 4
+                                    -rw-r--r-- 1 ec2-user ec2-user 367 Aug 18 12:32 test.rtf                                    
+                                </code></pre>
+
+                                <p class="text-blog">Finally, navigate back to the parent folder by typing the following command:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    cd ..
+                                </code></pre>
+
+                                <h5>7. Create a user to manage the instance</h5>
+
+                                <p class="text-blog">Connect to the instance first. Then create a new user:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    sudo adduser myuser
+                                </code></pre>
+
+                                <p class="text-blog">Add the new user to the sudo group:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    sudo usermod -aG sudo myuser
+                                </code></pre>
+
+                                <p class="text-blog">To confirm that the new user has the correct permissions, switch to their account using the su command and then test if they can run sudo commands.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    su - myuser
+                                    sudo ls -l /root  # Test a sudo command
+                                    exit              # Exit from the new user's shell
+                                </code></pre>
+
+                                <p class="text-blog">If you want the new user to log in using SSH key pairs (which is more secure than passwords), you can set up SSH key authentication for the new user. To do this, you can either generate a new SSH key pair on your computer, or retrieve the public key from the key pair you created earlier. Since there is no point in generating a new key pair, let's retrieve the public key of our existing key pair:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    ssh-keygen -y -f Documents/Tanulás/AWS/EC2/EC2Key.pem
+                                </code></pre>
+
+                                <p class="text-blog">The command returns the public key, as shown in the following example:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    ssh-rsa AAAAB3NzaC1yc2EADDDDAQABAAABAQCC0TBJiFkjBsE9aR1DyqVy8KZT9o/Ogt//oT1iJL1OzMDJn7v8w8ROUStybBjW+vv6Plxg3LTw305ts5JvRJkBaFete5ZWmTOnt7tvu/ST6JPj1OHYa8ba8RnVnwefXQY2gMtKJTFEJA2SFSne+4WX4fxXbo2pSo2bHKp1GgxjlxNoZP5LhNqGBsGHcmOmT5YXub6zRiy4hJqbjeYVb5r8KwSF4UlpoFpbPN1kYn+qyAX8Dc6pW0KCcD6ofDZaRh9d6rxT4wNT9R9EW0n9eaf59aWcabjUXSiFTzgBy8JDOREKeRmgmsfIB0UxiAwKT4W3f1qSUZWVTVkhrlrwCjsT
+                                </code></pre>
+
+                                <p class="text-blog">Now connect to the instance anc create a new user:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    sudo adduser myuser
+                                </code></pre>
+
+                                <p class="text-blog">Switch to the new user so that the directory and file that you create will have the proper ownership.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    sudo su - myuser
+                                </code></pre>
+
+                                <p class="text-blog">Now instead of this</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    [ec2-user@ip-182-41-52-53 ~]$
+                                </code></pre>
+
+                                <p class="text-blog">You should see this as the prompt:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    [myuser@ip-182-41-52-53 ~]$ 
+                                </code></pre>
+
+                                <p class="text-blog">Each user has a home directory on the server. Create a folder called .ssh and change its file permissions to 700. 700 means that only the owner can read, write and open the directory.</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    mkdir .ssh
+                                    chmod 700 .ssh
+                                </code></pre>
+
+                                <p class="text-blog">Create a file named authorized_keys in the .ssh directory and change its file permissions to 600 (only the owner can read or write to the file):</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    touch .ssh/authorized_keys
+                                    chmod 600 .ssh/authorized_keys
+                                </code></pre>
+
+                                <p class="text-blog">Finally, Open the authorized_keys file using your favorite text editor (such as vim or nano).</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    nano .ssh/authorized_keys
+                                </code></pre>
+
+                                <p class="text-blog">Paste the public key that you retrieved a few steps before. Now you should be able to use this user to log into the instance. Type exit and then type exit again. Now use the new user to log in with the same private key:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    ssh -i Documents/Tanulás/AWS/EC2/EC2Key.pem myuser@ec2-16-181-44-4.eu-north-1.compute.amazonaws.com
+                                </code></pre>
+
+                                <h5>8. Giving sudo rights to a user</h5>
+
+                                <p class="text-blog">You might notice that the current use has no sudo privileges. Once you type a sudo command, such as sudo ls -l, the client asks for a password. We did not set up a password for the user, because accessing the instance via SSH is much safer. To give a user sudo privileges, perform the following steps:</p>
+                                <p class="text-blog">Connect to the instance with the default user, such as ec2-user. The default user has sudo privileges by default.</p>
+                                <p class="text-blog">Open the sudoers file:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    sudo visudo
+                                </code></pre>
+
+                                <p class="text-blog">Then add the following line:</p>
+                                <pre style="font-size:10px;"><code class="lang-javascript">
+                                    myuser ALL=(ALL) NOPASSWD:ALL
+                                </code></pre>
+
+                                <p class="text-blog">This line allows the user newusername to run any command with sudo without being prompted for a password. Save and Exit.</p>
+                                <p class="text-blog">Now disconnect and reconnect to the instance with the other user and run a sudo command.</p>
+                                    
+                                <br/><br/>
+                                <p class="text-blog">That's the end of this tutorial.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- BLog End -->
+                </div><!--end row-->
+            </div><!--end container-->
+
+        </section>
+        <!-- Blog -->
+
+
+
+
+
+
+   
+        <footer class="footer footer-bar bg-dark">
+            <div class="container text-foot text-center">
+                <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Balint Farago</p>
+            </div><!--end container-->
+        </footer><!--end footer-->
+        <!-- Footer End -->
+        
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" class="back-to-top rounded text-center" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up d-block"> </i> 
+        </a>
+        <!-- Back to top -->
+
+
+        <!-- javascript -->
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script src="../../js/gumshoe.js"></script>
+        <!-- SLIDER -->
+        <script src="../../js/tiny-slider.js "></script>
+        <script src="../../js/tiny-slider-init.js "></script>
+        <!-- MK Lightbox -->
+        <script src="../../js/mklb.js"></script>
+        <script src="../../js/filter.init.js"></script>
+        <!-- Contact
+        <script src="js/contact.js"></script> -->
+        <!-- Counter -->
+        <script src="../../js/counter.init.js"></script>
+        <!-- Typed -->
+        <script src="../../js/typed.js"></script>
+        <!-- Feather icon -->
+        <script src="../../js/feather.min.js"></script>
+        <!-- Switcher -->
+        <script src="../../js/switcher.js"></script>
+        <!-- Main Js -->
+        <script src="../../js/app.js"></script>
+    </body>
+
+</html>
