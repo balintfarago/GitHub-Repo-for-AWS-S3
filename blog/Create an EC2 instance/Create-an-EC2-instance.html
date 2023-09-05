@@ -144,11 +144,16 @@
                                     
                                 <p class="text-blog">Amazon EC2 as an IaaS service provides a complete infrastructure that you can configure to suit your needs. With EC2 you launch instances, which are mini computers in plain English. When you launch such an instance, you're actually using a part of a server, dedicated for you and since you are able install and configure the OS, it gives you a feel of running your own system.</p>
                                 <p class="text-blog">AWS offers many kinds of instances:</p>
-                                <ul>
+                                <ul class="text-blog">
                                     <li><b>General purpose instances</b>: they provide a balance in compute, memory and network capabilities. Best used for app servers, backend servers, and small and medium databases.</li>
                                     <li><b>Compute optimized instances</b>: these instances focuses computational power. If you need processors with high performance, such as gaming, media transcoding or batch processing, then compute optimized instances should be your choice.</li>
                                     <li><b>Memory optimized instances</b>: these instances are designed for fast optimized performance of large data set processing in memory.</li>
                                     <li><b>Storage optimized instances</b>: these are designed to manage workloads where you need constant and high speed read write access.</li>
+                                </ul>
+
+                                <ul class="text-blog">
+                                    <li><b>Partition key</b> - A simple <b>primary key</b>, composed of one <b>attribute</b> known as the <b>partition key</b> (<i>username</i>). If the <b>table</b> has only a <b>partition key</b>, then no two <b>items</b> can have the same <b>partition key</b> value. In our example, there can be no other <b>item</b> with the username <i>bfarago</i>.</li>
+                                    <li><b>Partition key and sort key</b> - In this case the <b>primary key</b> is a composition of 2 keys. The <b>partition key</b> is a <i>hash attribute</i> and the <b>sort key</b> is a <i>range attribute</i>. The term <i>hash attribute</i> derives from the use of an internal hash function in DynamoDB. The term <i>range attribute</i> derives from the way DynamoDB stores <b>items</b> with the same <b>partition key</b> physically close together, in sorted order by the sort key value. The composition of 2 <b>partition keys</b> provides flexibility  when querying data.</li>
                                 </ul>
 
                                 <p class="text-blog">When you select an instance, you need to plan when and how you are going to use it. Amazon offers several solutions to meet your needs:</p>
@@ -164,7 +169,7 @@
 
                                 <p class="text-blog">AWS uses public-key cryptography to secure the login information for your instance. A Linux instance has no password; you use a key pair to log in to your instance securely. You specify the name of the key pair when you launch your instance, then provide the private key when you log in using SSH.</p>
                                 
-                                <ol>
+                                <ol class="text-blog">
                                     <li>Open Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/" target="_blank">https://console.aws.amazon.com/ec2/</a></li>
                                     <li>Select <b>Key Pairs</b> on the left pane and choose <b>Create key pair</b></li>
                                     <li>Provide a name</li>
@@ -183,12 +188,12 @@
                                 
                                 <p class="text-blog">Security groups act as a firewall for associated instances, controlling both inbound and outbound traffic. You must add rules to a security group that enable you to connect to your instance from your IP address using SSH.</p>
 
-                                <ol>
+                                <ol class="text-blog">
                                     <li>Open again the <b>Amazon EC2 console</b></li>
                                     <li>Select <b>Security Groups</b> on the left pane anc choose <b>Create security group</b></li>
                                     <li>Provide a name and leave the <b>VPC</b> as it is. For a security group it's recommended to include the region's name in the security group's name.</li>
                                     <li>For Inbound rules, create rules that allow specific traffic to reach your instance. We're going to create a web server later that should accept HTTP and HTTPS traffic. To do this:</li>
-                                        <ol>
+                                    <ol class="text-blog">
                                             <li>Choose <b>Add rule</b>. For <b>Type</b>, choose <b>HTTP</b>, for source, choose Anywhere</li>
                                             <li>Do the same with <b>HTTPS</b></li>
                                             <li>Finally, for <b>Type</b>, choose <b>SSH</b>. For <b>source</b>, choose <b>My IP</b> and provide the IP address of your computer. Amazon will automatically fill out the field with your IP address. You can also provide a range, if your IP address regularly changes within a range. </li>
@@ -201,12 +206,12 @@
 
                                 <h5>3. Launch an instance</h5>
 
-                                <ol>
+                                <ol class="text-blog"></ol>
                                     <li>Open again the <b>Amazon EC2 console</b></li>
                                     <li>On the EC2 dashboard, in the <b>Launch instance box</b>, click <b>Launch instance</b></li>
                                     <li>Enter a descriptive <b>Name</b> for your instance (I named it My Test Instance)</li>
                                     <li>Under <b>Application and OS Images</b>, do the following:</li>
-                                    <ol>
+                                    <ol class="text-blog">
                                         <li>Choose <b>Quick Start</b>, and then choose <b>Amazon Linux</b> as the OS for the instance</li>
                                         <li>From <b>Amazon Machine Image (AMI)</b>, select an HVM version of Amazon Linux 2 (I selected Amazon Linux 2 AMI (HVM)). The reason I selected this option is because this image is free tier eligible.</li>
                                     </ol>
@@ -227,7 +232,7 @@
                                 <p class="text-blog">This was pretty easy so let's try connecting from your machine using SSH. I'm using MacOS.</p>
                                 <p class="text-blog">To connect to your instance, you will need the following information:</p>
 
-                                <ul>
+                                <ul class="text-blog">
                                     <li>Public DNS name or IP address and user name</li>
                                     <li>The private key you generated earlier</li>
                                     <li>An SSH client on your computer</li>
