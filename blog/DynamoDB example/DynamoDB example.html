@@ -84,6 +84,11 @@
                                             <a class="dropdown-item" href="../Step Functions/Creating_chain_with_AWS_Step_Functions.html">Call a series of Lambda functions with Step Functions</a>
                                             <a class="dropdown-item" href="../AWS Lambda/Use-Lambda-To-Move-Files-And-Send-Emails.html">Move files in an S3 bucket with AWS Lambda and send an email with SES</a>
                                             <a class="dropdown-item" href="../SNS alert/Send-SMS-Email-Alert-With-SNS-And-Save-It-To-CloudWatch.html">Send an SMS and Email alert with SNS and save it to CloudWatch</a>
+                                            <a class="dropdown-item" href="../DynamoDB intro/Everything-you-need-to-know-about-DynamoDB.html">Everything you need to know about DynamoDB</a>
+                                            <a class="dropdown-item" href="../Build a simple webapp/Build-webapp-fronted-backend-lambda-dynamodb.html">Build a simple webapp that writes form data into DynamoDB</a>
+                                            <a class="dropdown-item" href="../DynamoDB operations/DynamoDB-write-read-update-delete-python-nodejs.html">How to write, read, update and delete items in a DynamoDB table (Python, Node.js)</a>
+                                            <a class="dropdown-item" href="../Wordpress with Lightsail/Create a Wordpress site with Amazon Lightsail.html">Create a Wordpress site with Amazon Lightsail</a>
+                                            <a class="dropdown-item" href="../Create an EC2 instance/Create-an-EC2-instance.html">Create an EC2 instance, transfer files and manage users</a>
                                             <a class="dropdown-item unclickable" href="">More on the way!</a>
                                         </div><!--end col-->
                                     </div><!--end row-->
@@ -300,11 +305,7 @@
                                     <li><b>Document types</b></li> - A document type represents a complex structure, like a list or a map. E.g. FavoriteThings: ["Cookies", "Coffee", 3.14159]</li>
                                     <li><b>Set types</b></li> - A set type represents multiple scalar values. If you're coming from a developer background, these the arrays. E.g. ["Black", "Green", "Red"]</li>
                                 </ul>
-                                
-                       KELL:
-                        Amazon DynamoDB stores data in partitions. A partition is an allocation of storage for a table. When you create a table, the initial status of the table is CREATING. During this phase, DynamoDB allocates sufficient partitions to the table so that it can handle your provisioned throughput requirements. You can begin writing and reading table data after the table status changes to ACTIVE.
-
-
+    
 
                                 <p class="text-blog">This is one example of a table with 2 rows having different attributes:</p>
                                 <img src="images/Table-different-attributes.png" class="blog_image"></img>
@@ -316,7 +317,6 @@
                                 <p class="text-blog">Here I put cars as well as sellers in the same table. This is something I would never do with a relational database, but DynamoDB is built to include different entities.
                                     You can also see that instead of <i>Manufacturer</i> I named the first column <i>PK</i> and initiated a second column as <i>SK</i>. Generic names for the partition key (PK) sort key (SK) attribute was done on purpose. When modelling data in DynamoDB we often try to put as many different entities into a single table as possible. Since these entities are identified by different underlying attributes, it’s less confusing to have generic attribute names.</p>
 
-§
 
 
                                 
